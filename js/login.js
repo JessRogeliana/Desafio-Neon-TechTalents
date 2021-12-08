@@ -73,6 +73,7 @@ document.getElementById("btn-submit").addEventListener('click', validaFormulario
 
 
 
+
 /*
 
 class Validator {

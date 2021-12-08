@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #5ce1e6;
+    background-color: #0cd8d8;
     font-family: 'Inter', sans-serif;
 }
 
@@ -94,6 +94,8 @@ footer {
     padding: 16px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column
 }
 
 footer p {
@@ -102,6 +104,16 @@ footer p {
 
 }
 
+.imagenes-rodape{
+    margin: 15px;
+    border-radius: 0.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer a {
+    text-decoration: none
+    }
+    
 ::placeholder{
     color: rgb(70, 66, 66);
 }
