@@ -2,7 +2,8 @@
 
 var camposReq = document.querySelectorAll('requisito');
 
-function validaFormulario() {
+function validaFormulario(event) {
+  event.preventDefault()
     let contador = 0
     for(var i = 0; i < camposReq.length; i++) {
         if (camposReq[i].value == '') {
