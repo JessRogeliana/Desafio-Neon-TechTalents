@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo-header">
-            <img class="img" src="../img/neonIcon.png" alt="Neon Icon">
+            <img class="img" src="../img/Cadê_Minha_Grana-logo.png" alt="Neon Icon">
         </div>
         <div class="abra-conta">
             <button type="submit" ><a href="#">ABRA SUA CONTA</a></button> 
@@ -19,38 +19,63 @@
     </header>
 
     <div id="main-container">
-        <h1>Cadastre-se</h1>
+      <h1>Cadastre-se</h1>
         <form id="register-form" action="">
           <div class="half-box spacing">
               <label for="name">Nome</label>
-              <input type="text" name="name" id="name" placeholder="Digite seu nome" data-required data-min-length="3" data-max-length="16">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu nome" required />
           </div>
           <div class="half-box">
               <label for="lastname">Sobrenome</label>
-              <input type="text" name="lastname" id="lastname" placeholder="Digite seu sobrenome" data-required data-only-letters>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu sobrenome" required />
           </div>
           <div class="full-box">
             <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email" required />
           </div>
           <div class="half-box spacing">
             <label for="lastname">Senha</label>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha" data-password-validate data-required>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha"  required />
           </div>
           <div class="half-box">
             <label for="passconfirmation">Confirmação de senha</label>
-            <input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha" data-equal="password">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Digite de novo sua senha"  required />
           </div>
           <div>
             <input type="checkbox" name="agreement" id="agreement">
-            <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
+            <label for="agreement" id="agreement-label">Eu li e aceito os <a href="https://neon.com.br/static/termos-de-uso?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAkZKNBhDiARIsAPsk0WjZC9CgjppsW9K1Rj3JAlyPQ-2VcmwIaPznS73U2LTHZDgHxcG1wnIaAkfbEALw_wcB">termos e condições de uso</a></label>
           </div>
           <div class="full-box">
             <input id="btn-submit" type="submit" value="Criar Conta">
           </div>
         </form>
       </div>
-      <p class="error-validation template"></p>
+
+      <footer id="contato" class="footer">
+        <div class="footer">
+        <a href="https://www.linkedin.com/company/timeneon/?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNR1P8ubE7lAsGuZPw2ntfw5UDknERghQzF0E_8RKUeCVp-XvJPClYaAjHPEALw_wcB" target="_blank" rel="noopener">
+          <img src="https://scontent.fitp1-1.fna.fbcdn.net/v/t39.30808-6/263632031_10226172001748635_8387623137986020316_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFq2AOTMJbGkCCvqPYv-irHA4C1ZqHJ7vMDgLVmocnu84G4U7IZ-RLfQwLsdCthea4&_nc_ohc=t2nCwZTtmBMAX9EdazU&_nc_ht=scontent.fitp1-1.fna&oh=c7e3214fb9db969988121e7d544a3eef&oe=61B5E6B0"
+          width="48" height="48" alt="logo facebook"/ class="imagenes-rodape">
+       </a>
+  
+       <a href="https://twitter.com/timeneon?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNR1P8ubE7lAsGuZPw2ntfw5UDknERghQzF0E_8RKUeCVp-XvJPClYaAjHPEALw_wcB" target="_blank" rel="noopener">
+          <img src="https://scontent.fitp1-1.fna.fbcdn.net/v/t39.30808-6/264302679_10226172002148645_144887783338284426_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeEXIw7DE-Jf22cGWIFoKD0i2twycwupKQLa3DJzC6kpAjfndMn5I16Sz3vdkaSd_sA&_nc_ohc=M41UScR-7PoAX-MNQTS&_nc_ht=scontent.fitp1-1.fna&oh=a4022048c93cbe0c11a11a52ad0dce0d&oe=61B5596E"
+          width="48" height="48" alt="logo facebook"/ class="imagenes-rodape">
+       </a>
+  
+       <a href="https://instagram.com/timeneon?utm_medium=copy_link" target="_blank" rel="noopener">
+          <img src="https://scontent.fitp1-1.fna.fbcdn.net/v/t39.30808-6/265437449_10226172001468628_4146015071030964145_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHoOQG75HQQ3xMN7ZLqPnF1VQrHH1a0UGxVCscfVrRQbNaBW7xy9L_EFMR7nyMb0vc&_nc_ohc=Ve_zGfNzke4AX_PBAxC&tn=sU06FqweXNN69Mck&_nc_ht=scontent.fitp1-1.fna&oh=042bc14f9010490ea44af7810eefe4ea&oe=61B539A8"
+          width="52" height="52" alt="logo facebook"/ class="imagenes-rodape">
+       </a>
+        <p>© Copyright 2021. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
       <script src="../js/cadastro.js"></script>
 </body>
 </html>

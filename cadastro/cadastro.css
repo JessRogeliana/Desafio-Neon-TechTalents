@@ -9,16 +9,16 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #0046A0;
+  background-color: #0cd8d8;
   background-size: cover;
   font-family: "Comfortaa", sans-serif;
 }
 
 .logo-header img{
-  width: 30%;
+  width: 350px;
   position: absolute;
-  top: -10%; 
-  left: -5%;
+  top: -2%; 
+  left: 0%;
 }
 
 /* link que foi visitado */
@@ -29,7 +29,7 @@ a:visited {
 button[type="submit"]{
   height: 50px;
   line-height: 45px;
-  width: 220px;
+  width: 200px;
   position: absolute;
   top: 5%;
   right: 2%;
@@ -160,13 +160,27 @@ input:focus{
   width: auto;
 }
 
-.error-validation {
-  color: #ff1a1a;
-  position: absolute;
-  top: 57px;
-  font-size: 12px;
+.footer{
+  padding: 15px;
+  margin: 0 auto;
+  display: inline-block;
+  color: #F1F4F4;
+  align-items: center;
+  justify-items: center;
+  background: linear-gradient(
+          225deg,
+          rgba(102, 16, 242, 0.3) 0%,
+          rgba(102, 16, 242, 0) 100%
+        );
 }
-
-.template {
-  display: none;
-}
+  
+  .imagenes-rodape{
+      margin: 15px;
+      border-radius: 0.3rem;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .footer a {
+      text-decoration: none
+      }
+  
