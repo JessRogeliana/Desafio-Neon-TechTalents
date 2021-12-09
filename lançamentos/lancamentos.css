@@ -49,7 +49,7 @@ main {
   align-items: center;
 }
 
-.login-container{
+.lancamento-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,6 +63,12 @@ main {
   padding: 10px;
   margin: auto;
 }
+
+.central{
+display: flex;
+justify-content: center;
+}
+
 
 .usuario-img{
   border-radius: 50%;
@@ -82,12 +88,6 @@ h1{
   font-weight: bold;
 }
 
-.neon-mensagem {
-  margin-top: 4%;
-}
-
-
-
 footer {
   background-color: white;
   margin-top: 5%;
@@ -106,20 +106,8 @@ footer p {
   color: rgb(70, 66, 66);
 }
 
-#name , #password {
-  width: 100%;
-  margin-bottom: 21px;
-  border: none;
-  border-bottom: 1px solid #F1F4F4;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #F1F4F4;
-  font-size: 16px;
-}
-
 #btn-submit {
-  width: 95%;
+  width: 80%;
   border: none;
   outline: none;
   height: 50px;

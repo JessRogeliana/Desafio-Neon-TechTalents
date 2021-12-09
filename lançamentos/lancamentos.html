@@ -29,161 +29,69 @@
 
     <main>
         
-        <div class="login-container">
-            <div class="container">
+        <div class="col-sm-12 lancamento-container">            
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 text-center">
+                        <img class="usuario-img" src="../img/det.png" width="100" height="100" alt="moeda de ouro">                       
                         <h1>Deposite sua grana!</h1>
                     </div>
-                    <!-- panel preview -->
-                    <div class="col-sm-5">
-                        <h4>Add payment:</h4>
+                      <div class="col-sm-12 central">                        
                         <div class="panel panel-default">
-                            <div class="panel-body form-horizontal payment-form">
+                            <div class="panel-body form-horizontal payment-form">                                
                                 <div class="form-group">
-                                    <label for="concept" class="col-sm-3 control-label">Concept</label>
+                                    <label for="description" class="col-sm-3 control-label">Descrição</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="concept" name="concept">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description" class="col-sm-3 control-label">Description</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="description" name="description">
+                                        <input maxlength="50" equired type="text" class="form-control" id="description" name="description">
                                     </div>
                                 </div> 
                                 <div class="form-group">
-                                    <label for="amount" class="col-sm-3 control-label">Amount</label>
-                                    <div class="col-sm-9">
-                                        <input type="number" class="form-control" id="amount" name="amount">
+                                    <label for="amount" class="col-sm-12">Valor</label>
+                                    <div class="col-9">
+                                        <input class="form-control" id="amount" name="amount" required step='001' value='0,00' placeholder='0,00' min="0,00" 
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        type = "number"
+   
+                                        maxlength = "12">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="status" class="col-sm-3 control-label">Status</label>
-                                    <div class="col-sm-9">
+                                    <label for="status" class="col-sm-5 control-label">Entrou ou saiu?</label>
+                                    <div class="col-9">
                                         <select class="form-control" id="status" name="status">
-                                            <option>Paid</option>
-                                            <option>Unpaid</option>
+                                            <option>Entrou</option>
+                                            <option>Saiu</option>
                                         </select>
                                     </div>
-                                </div> 
+                                </div>
+                             
                                 <div class="form-group">
-                                    <label for="date" class="col-sm-3 control-label">Date</label>
-                                    <div class="col-sm-9">
+                                    <label for="date" class="col-sm-3 control-label">Dia</label>
+                                    <div class="col-9">
                                         <input type="date" class="form-control" id="date" name="date">
                                     </div>
                                 </div>   
                                 <div class="form-group">
-                                    <div class="col-sm-12 text-right">
-                                        <button type="button" class="btn btn-default preview-add-button">
-                                            <span class="glyphicon glyphicon-plus"></span> Add
-                                        </button>
+                                    <div class="col-12 text-right">
+                                        <button type="button" id=btn-submit class="btn btn-default preview-add-button">
+                                            <span class="glyphicon glyphicon-plus"></span>Faça seu lançamento</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>            
-                    </div> <!-- / panel preview -->
-                    <div class="col-sm-7">
-                        <h4>Preview:</h4>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="table-responsive">
-                                    <table class="table preview-table">
-                                        <thead>
-                                            <tr>
-                                                <th>Concept</th>
-                                                <th>Description</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                                <th>Date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody> <!-- preview content goes here-->
-                                    </table>
-                                </div>                            
-                            </div>
-                        </div>
-                        <div class="row text-right">
-                            <div class="col-xs-12">
-                                <h4>Total: <strong><span class="preview-total"></span></strong></h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <hr style="border:1px dashed #dddddd;">
-                                <button type="button" class="btn btn-primary btn-block">Submit all and finish</button>
-                            </div>                
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img class="usuario-img" src="../img/Neon_Blue_Pose_pascoa.png" width="100" height="100" alt="">
-            
-            <form id="register-form">
-                <p>Usuário</p>
-                <input type="text" name="name" id="name" placeholder="Insira seu nome de usuário" class="requisito">
-                <p>Senha</p>
-                <input type="password" name="password" id="password" placeholder="Digite sua senha" class="requisito">
-                <input id="btn-submit" type="submit" name="" value="Login">
-                <a id="mensagem-esqueceuSenha" href="#">Esqueceu sua senha?</a><br>
-                <a id="mensagem-criarConta" href="../cadastro/index.html">Crie sua conta</a>
-            </form>
+                                               </div>                  
+                             
+                    
         </div>
         <p class="error-validation template"></p>
 
-        <div class="neon-mensagem">
-            <img class="neon-mensagem" src="../img/Cadê_Minha_Grana-mensagem.png">
-        </div>
+
 
     </main>
 
     <footer>
         <p>© Copyright 2021. Todos os direitos reservados.</p>
     </footer>
-
-    <div class="toast align-items-center text-white bg-primary border-0" style="position: absolute; top: 30%; right: 35%" role="alert" aria-live="assertive" aria-atomic="true" id="toast-confimacao">
-        <div class="d-flex">
-            <div class="toast-body">
-            Login realizado com sucesso!
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
-        </div>
-    </div>
-
-    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 100%; right: 35%" role="alert" aria-live="assertive" aria-atomic="false" id="toast-erro">
-        <div class="d-flex">
-            <div class="toast-body">
-            Houve um erro! Favor verificar os campos preenchidos!
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
-        </div>
-    </div>
-
-    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 75%; right: 30%" role="alert" aria-live="assertive" aria-atomic="false" id="usuario-erro">
-        <div class="d-flex">
-            <div class="toast-body">
-            Usuário incorreto! Fvor digitar um usuário valido.
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
-        </div>
-    </div>
-
-    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 65%; right: 30%" role="alert" aria-live="assertive" aria-atomic="false" id="senha-erro">
-        <div class="d-flex">
-            <div class="toast-body">
-            Senha incorreta! Fvor digitar uma senha valida.
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
-        </div>
-    </div>
-
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="lancamentos.js"></script>
-
+    
 </body>
 </html>
