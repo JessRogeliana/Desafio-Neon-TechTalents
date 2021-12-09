@@ -1,0 +1,180 @@
+
+body {
+    background-color: #5ce1e6;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+/*CABEÇALHO*/
+
+
+header {  
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+.logo-h1 {
+    width: 8%;
+}
+
+header h1 {
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    color: #0072CC;
+}
+
+.logo-header {
+    width: 10%;
+}
+
+.logo-header img {
+    width: 100%;
+}
+
+button a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    background: #FFC600;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 40px;
+    border: none;
+    height: 50px;
+    line-height: 45px;
+    width: 220px;
+    margin-left: 2em;
+}
+
+button:hover{
+    background: #dbad05;
+    color: #000;
+}
+
+button a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*MAIN*/
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em;
+}
+
+.saldo-conta, .filtro, .table {
+    border-radius: 20px;
+    background-color: white;
+    width: 80%;
+    margin: 1em;
+    padding: 5px;
+}
+
+.saldo-conta p {
+    width: auto;
+    margin-left: 1em;
+    margin-bottom: 0;
+}
+
+.saldo-principal {
+    font-size: 2em;
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
+
+.rodapé-saldo {
+    font-size: 1em;
+    padding-left: 1em;
+    color: black;
+}
+
+.filtro p {
+    color: black;
+    width: auto;
+    margin-left: 1em;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    border: 2px, solid #000;
+    border-radius: 80px 0px 80px 0px;
+    color: #fff;
+    background-color: #0072CC;
+    box-sizing: border-box;
+    padding: 2em;
+    margin: auto;
+}
+
+.table tbody tr {
+    border-top: 1px solid rgba(128, 128, 128, 0.514);
+}
+
+tr {
+    padding: 2em;
+}
+
+td svg {
+    margin-right: 1em;
+}
+
+.icon-excluir, .false {
+    color: red;
+}
+
+.true {
+    color: green;
+}
+
+.table-coluna {
+    font-weight: bold;
+}
+
+.novo-lancamento {
+    width: 80%;
+    margin: 1em;
+}
+
+.botao-novo-lancamento {
+    width: 100%;
+    margin: 0;
+}
+
+.neon-mensagem {
+    margin-top: 4%;
+}
+
+
+/*FOOTER*/
+ 
+footer {
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    margin-top: 16px;
+    font-size: 1em;
+    font-weight: bold;
+}
