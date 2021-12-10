@@ -1,12 +1,17 @@
-var inputBox = document.getElementById("inputBox");
+(function () {
+  'use strict'
 
-var invalidChars = [
-  "-",
-  "e",
-];
+  var forms = document.querySelectorAll('.needs-validation')
 
-inputBox.addEventListener("keydown", function(e) {
-  if (invalidChars.includes(e.key)) {
-    e.preventDefault();
-  }
-});
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
