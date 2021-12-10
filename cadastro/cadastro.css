@@ -3,7 +3,7 @@ html{
 }
 
 body {
-  background-color: #0cd8d8;
+  background-color: #5ce1e6;
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
 }
@@ -27,6 +27,7 @@ header h1 {
   text-align: center;
   font-size: 3rem;
   color: #0072CC;
+  padding-top: 1rem;
 }
 
 .logo-header {
