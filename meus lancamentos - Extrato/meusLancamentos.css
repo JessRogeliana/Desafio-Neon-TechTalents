@@ -1,0 +1,404 @@
+html {
+    font-size: 80%;
+}
+
+body {
+    background-color: #5ce1e6;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/*CABEÇALHO*/
+
+
+header {  
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.logo-h1 {
+    width: 8%;
+}
+
+header h1 {
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    color: #0072CC;
+    padding-top: 1rem;
+}
+
+.logo-header {
+    width: 13%;
+}
+
+.logo-header img {
+    width: 100%;
+}
+
+button a {
+    text-decoration: none;
+    color: #000;
+    width: auto;
+}
+
+button {
+    background: #FFC600;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    height: 4rem;
+    line-height: 3rem;
+    width: 12%;
+    margin-left: 3rem;
+}
+
+button:hover{
+    background: #dbad05;
+    color: #000;
+}
+
+button a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*MAIN*/
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem;
+    padding-top: 8rem;
+}
+
+.saldo-conta, .filtro, .table {
+    border-radius: 1.5rem;
+    background-color: white;
+    width: 90%;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.saldo-conta p {
+    width: auto;
+    margin-left: 1rem;
+    margin-bottom: 0;
+}
+
+.saldo-principal {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: green;
+}
+
+.rodapé-saldo {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.filtro p, label {
+    color: #212529;
+    width: auto;
+    margin-left: 1em;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.filtro p {
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.filtro {
+    padding: 1rem 0 1rem 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    border-radius: 4rem 0 4rem 0;
+    color: #fff;
+    background-color: #0072CC;
+    box-sizing: border-box;
+    padding: 2rem;
+    margin: auto;
+}
+
+.table tbody tr {
+    border-top: 1px solid rgba(128, 128, 128, 0.514);
+}
+
+tr {
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.table-coluna {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+td svg {
+    margin-right: 1rem;
+}
+
+td svg:hover {
+    color: #5ce1e6;
+}
+
+.icon-excluir, .false {
+    color: red;
+    font-weight: bold;
+}
+
+.true {
+    color: green;
+    font-weight: bold;
+}
+
+.novo-lancamento {
+    width: 90%;
+    margin: 1rem;
+}
+
+.botao-novo-lancamento {
+    width: 100%;
+    margin: 0;
+    height: 4rem;
+}
+
+/*
+.neon-mensagem {
+    width: 50%;
+    padding-top: 2rem;
+}
+
+.neon-mensagem img {
+    display: flex;
+    justify-self: center;
+    margin: auto;
+}
+*/
+
+/*FOOTER*/
+
+
+footer {
+    background-color: #F1F4F4;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+  
+footer p {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+  
+.imagenes-rodape{
+    margin: 15px;
+    border-radius: 0.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  
+footer a {
+    text-decoration: none
+}
+
+
+
+/*MOBILE*/
+
+
+@media (max-width: 1440px) {
+    html {
+        font-size: 70%;
+    }
+    button {
+        width: 15%;
+    }
+    .logo-header {
+        width: 19%;
+    }
+    .container {
+        width: 60%;
+    }
+    /*
+    .neon-mensagem {
+        width: 60%;
+    }
+    */
+    .logo-h1 {
+        width: 9%;
+    }
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 65%;
+    }
+    button {
+        width: 23%;
+    }
+    .logo-header {
+        width: 28%;
+    }
+    .container {
+        width: 63%;
+    }
+    /*
+    .neon-mensagem {
+        width: 65%;
+    }
+    */
+    .logo-h1 {
+        width: 9.5%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+    button {
+        width: 30%;
+    }
+    .logo-header {
+        width: 38%;
+    }
+    .container {
+        width: 80%;
+    }
+    /*
+    .neon-mensagem {
+        width: 70%;
+    }
+    */
+    .logo-h1 {
+        width: 10%;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .container {
+        width: 83%;
+    }
+}
+
+@media (max-width: 645px) {
+    html {
+        font-size: 50%;
+    }
+    button {
+        width: 30%;
+    }
+    .logo-header {
+        visibility: hidden; 
+    }
+    .container {
+        width: 85%;
+    }
+    /*
+    .neon-mensagem {
+        width: 75%;
+    }
+    */
+}
+
+@media (max-width: 425px) {
+    .container {
+        width: 95%;
+    }
+    .button {
+        margin-left: 1rem;
+    }
+    .logo-h1 {
+        width: 0%;
+    }
+    header h1 {
+        padding: 1rem;
+    }
+    /*
+    .neon-mensagem {
+        width: 80%;
+    }
+    */
+    main {
+        padding: 4.5rem;
+        padding-top: 6rem;
+    }
+    input {
+        
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 100%;
+    }
+    .button {
+        margin-left: 1rem;
+    }
+    .logo-h1 {
+        width: 0%;
+    }
+    header h1 {
+        padding: 1.5rem;
+    }
+    /*
+    .neon-mensagem {
+        width: 90%;
+    }
+    */
+    html {
+        font-size: 45%;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 100%;
+    }
+    .button {
+        margin-left: 1rem;
+    }
+    .logo-h1 {
+        width: 0%;
+    }
+    header h1 {
+        padding: 1.5rem;
+    }
+    /*
+    .neon-mensagem {
+        width: 90%;
+    }
+    */
+    html {
+        font-size: 45%;
+    }
+}
