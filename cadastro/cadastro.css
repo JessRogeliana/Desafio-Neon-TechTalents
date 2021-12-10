@@ -1,0 +1,266 @@
+html{
+  font-size: 80%;
+}
+
+body {
+  background-color: #5ce1e6;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+display: flex;
+ justify-content: space-between;
+align-items: baseline;
+box-sizing: border-box;
+background-color: #F1F4F4;
+}
+
+.logo-h1 {
+  width: 8%;
+}
+
+header h1 {
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  color: #0072CC;
+  padding-top: 1rem;
+}
+
+.logo-header {
+  width: 13%;
+}
+
+.logo-header img {
+  width: 100%;
+}
+
+button a {
+  text-decoration: none;
+  color: #000;
+  width: auto;
+}
+
+button {
+  background: #FFC600;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  height: 4rem;
+  line-height: 3rem;
+  width: 12%;
+  margin-left: 3rem;
+}
+
+button:hover{
+  background: #dbad05;
+  color: #000;
+}
+
+button a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  border: .1rem, solid #000;
+  border-radius: 4rem 0 4rem 0;
+  color: #fff;
+  background-color: #0072CC;
+  box-sizing: border-box;
+  padding: 1.8rem  1.7rem;
+  margin-top: 5%;
+}
+
+.usuario-img{
+  width: 30%;
+  height: 30%;
+  border-radius: 3rem;
+  top: auto;
+}
+
+h2{
+  padding-top: 5px;
+  padding-bottom: 20px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 25px;
+}
+
+form {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.full-box {
+flex: 1 1 100%;
+position: relative;
+}
+
+.half-box {
+flex: 1 1 45%;
+position: relative;
+}
+
+.spacing {
+margin-right: 2.5%;
+}
+
+.login p{
+  font-weight: bold;
+}
+
+.neon-mensagem {
+  margin-top: 4%;
+}
+
+#name , #password, #email, #confirPassword {
+  width: 100%;
+  margin-bottom: 21px;
+  border: none;
+  border-bottom: 1px solid #F1F4F4;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #F1F4F4;
+  font-size: 16px;
+}
+
+a{
+ color: #FFC600;
+}
+
+#btn-submit {
+  width: 95%;
+  border: none;
+  outline: none;
+  height: 50px;
+  color: #000;
+  font-weight: bold;
+  background: #FFC600;
+  transition: 0.2s;
+  padding: 5px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 40px;
+}
+
+#btn-submit:hover {
+  cursor: pointer;
+  background: #dbad05;
+  transition: 0.2s;
+}
+
+footer {
+  background-color: #F1F4F4;
+  margin-top: 5%;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+.imagenes-rodape{
+  margin: 15px;
+  border-radius: 0.3rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer a {
+  text-decoration: none
+  }
+  
+::placeholder{
+  color: rgb(70, 66, 66);
+}
+
+.copy{
+  color: #2c2626;
+  opacity: 0.5;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#mensagem-esqueceuSenha, #mensagem-criarConta{
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
+  color: #F1F4F4;
+  margin-bottom: 10px;
+}
+
+#mensagem-esqueceuSenha:hover, #mensagem-criarConta:hover{
+  transition: 00.2s;
+  color: #dbad05;
+}
+
+/*Medias Querys Responsividade*/
+
+@media (max-width: 1440px) {
+
+  html {
+    font-size: 70%;
+}
+
+  header h1{
+    font-size: 1.3rem;
+  }
+
+  .logo-header img {
+    display: none;
+  }
+
+  button {
+    width: 15%;
+    margin-inline: auto;
+}
+
+.login-container{
+  width: 90%;
+  font-size: x-small;
+}
+
+h2{
+  font-size: 1rem;
+}
+
+#btn-submit{
+  width: 85%;
+  font-size: 1rem;
+}
+
+.neon-mensagem{
+    width: 80%;
+  }
+
+  .imagenes-rodape{
+    width: 12%;
+    height: 12%;
+  }
+
+  .copy{
+    font-size: .8rem;
+  }
+}
