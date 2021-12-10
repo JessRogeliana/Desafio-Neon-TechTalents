@@ -16,6 +16,10 @@ box-sizing: border-box;
 background-color: #F1F4F4;
 }
 
+.logo-h1 {
+  width: 8%;
+}
+
 header h1 {
   font-weight: bold;
   letter-spacing: 0.3rem;
@@ -25,10 +29,12 @@ header h1 {
   color: #0072CC;
 }
 
+.logo-header {
+  width: 13%;
+}
+
 .logo-header img {
-  width: 150px;
-  top: 5%;
-  right: 10%;
+  width: 100%;
 }
 
 button a {
@@ -47,21 +53,12 @@ button {
   height: 4rem;
   line-height: 3rem;
   width: 12%;
-  margin: 0%;
   margin-left: 3rem;
-  top: 5%;
-  right: 2%;
-  cursor: pointer;
-  transition: .1s ease all;
 }
 
 button:hover{
   background: #dbad05;
   color: #000;
-}
-
-button:hover{
-  background: #dbad05;
 }
 
 button a:hover {
