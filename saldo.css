@@ -1,11 +1,14 @@
 html {
   font-size: 80%;
+  
 }
 
 body {
   background-color: #5ce1e6;
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
+  border: 0;
+  padding: 0;
 }
 
 
