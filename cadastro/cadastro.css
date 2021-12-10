@@ -1,75 +1,102 @@
 *{
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
 }
 
-body{
-  margin: 0;
-  padding: 0;
+body {
   background-color: #0cd8d8;
-  background-size: cover;
-  font-family: "Comfortaa", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-.logo-header img{
-  width: 350px;
-  position: absolute;
-  top: -2%; 
-  left: 0%;
+header {
+display: flex;
+ justify-content: space-between;
+align-items: baseline;
+box-sizing: border-box;
+background-color: #F1F4F4;
 }
 
-/* link que foi visitado */
-a:visited {
-  color: #000;
+header h1 {
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  color: #0072CC;
 }
 
-button[type="submit"]{
-  height: 50px;
-  line-height: 45px;
-  width: 200px;
-  position: absolute;
+.logo-header img {
+  width: 150px;;
   top: 5%;
-  right: 2%;
+  right: 10%;
+}
+
+button a {
+  text-decoration: none;
+  color: #000;
+  width: auto;
+}
+
+button {
   background: #FFC600;
   color: #000;
   font-weight: bold;
-  font-size: 20px;
-  border: none;
+  font-size: 1.5rem;
   border-radius: 40px;
+  border: none;
+  height: 50px;
+  line-height: 45px;
+  width: 220px;
+  margin-left: 3rem;
+  top: 5%;
+  right: 2%;
   cursor: pointer;
   transition: .1s ease all;
 }
 
-button[type="submit"]:hover{
+button:hover{
+  background: #dbad05;
+  color: #000;
+}
+
+button:hover{
   background: #dbad05;
 }
 
-/* form */
-#main-container {
-  width: auto;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  padding: 25px;
+button a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 50%;
   border: 2px, solid #000;
   border-radius: 80px 0px 80px 0px;
   color: #fff;
   background-color: #0072CC;
-  top: 70%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
   box-sizing: border-box;
-  padding: 68px 28px;
+  padding: 30px 28px;
+  margin-top: 5%;
 }
 
-#main-container h1 {
-  margin: 0;
-  padding-top: 0;
+.usuario-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  top: auto;
+}
+
+h2{
+  padding-top: 5px;
   padding-bottom: 20px;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -77,110 +104,122 @@ button[type="submit"]:hover{
   font-size: 25px;
 }
 
-#main-container a{
-  text-decoration: none;
-  color: #dbad05;
+form {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
 }
 
+.full-box {
+flex: 1 1 100%;
+position: relative;
+}
+
+.half-box {
+flex: 1 1 45%;
+position: relative;
+}
+
+.spacing {
+margin-right: 2.5%;
+}
+
+.login p{
+  font-weight: bold;
+}
+
+.neon-mensagem {
+  margin-top: 4%;
+}
+
+#name , #password, #email, #confirPassword {
+  width: 100%;
+  margin-bottom: 21px;
+  border: none;
+  border-bottom: 1px solid #F1F4F4;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #F1F4F4;
+  font-size: 16px;
+}
+
+a{
+color: #FFC600;
+}
+
+#btn-submit {
+  width: 95%;
+  border: none;
+  outline: none;
+  height: 50px;
+  color: #000;
+  font-weight: bold;
+  background: #FFC600;
+  transition: 0.2s;
+  padding: 5px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 40px;
+}
+
+#btn-submit:hover {
+  cursor: pointer;
+  background: #dbad05;
+  transition: 0.2s;
+}
+
+footer {
+  background-color: #F1F4F4;
+  margin-top: 5%;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+footer p {
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+.imagenes-rodape{
+  margin: 15px;
+  border-radius: 0.3rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer a {
+  text-decoration: none
+  }
+  
 ::placeholder{
   color: rgb(70, 66, 66);
 }
 
-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.copy{
+  color: #2c2626;
+  opacity: 0.5;
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
 }
 
-.full-box {
-  flex: 1 1 100%;
-  position: relative;
-}
-
-.half-box {
-  flex: 1 1 45%;
-  position: relative;
-}
-
-.spacing {
-  margin-right: 2.5%;
-}
-
-input, label {
-  display: block;
-  outline: none;
-  width: 100%;
-}
-
-label {
+#mensagem-esqueceuSenha, #mensagem-criarConta{
   font-weight: bold;
-  font-size: .8rem;
-}
-
-input{
-    padding: 10px;
-    margin-bottom: 40px;
-    border: none;
-    border-bottom: 2px solid #F1F4F4;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #F1F4F4;
-    font-size: 16px;
-}
-
-input:focus{
-    border-color: #FFC600;
-}
-
-#btn-submit{
-    border: none;
-   outline: none;
-   height: 35px;
-   color: #000;
-   font-weight: bold;
-   font-size: 20px;
-   background: #FFC600;
-   border-radius: 20px;
-   transition: 0.2s;
-}
-
-#btn-submit:hover{
-    cursor: pointer;
-    background: #dbad05;
-    transition: 0.2s;
-}
-
-#agreement {
-  margin-right: 5px;
-}
-
-#agreement, #agreement-label {
-  display: inline-block;
-  width: auto;
-}
-
-.footer{
-  padding: 15px;
-  margin: 0 auto;
-  display: inline-block;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
   color: #F1F4F4;
-  align-items: center;
-  justify-items: center;
-  background: linear-gradient(
-          225deg,
-          rgba(102, 16, 242, 0.3) 0%,
-          rgba(102, 16, 242, 0) 100%
-        );
+  margin-bottom: 10px;
 }
-  
-  .imagenes-rodape{
-      margin: 15px;
-      border-radius: 0.3rem;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  .footer a {
-      text-decoration: none
-      }
-  
+
+#mensagem-esqueceuSenha:hover, #mensagem-criarConta:hover{
+  transition: 00.2s;
+  color: #dbad05;
+}
+
+/*Medias Querys Responsividade*/
+

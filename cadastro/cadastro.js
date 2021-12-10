@@ -1,78 +1,97 @@
-document.querySelector('#email').addEventListener('blur', validateEmail);
+var camposReq = document.querySelectorAll('requisito');
 
-document.querySelector('#password').addEventListener('blur', validatePassword);
-
-document.querySelector('#username').addEventListener('blur', validateUsername);
-
-const reSpaces = /^\S*$/;
-
-function validateUsername(e) {
-  const username = document.querySelector('#username');
-  if (reSpaces.test(username.value)) {
-    username.classList.remove('is-invalid');
-    username.classList.add('is-valid');
-    return true;
-  } else {
-    username.classList.remove('is-valid');
-
-    username.classList.add('is-invalid');
-    return false;
-  }
+function validaFormulario(event) {
+  event.preventDefault()
+    let contador = 0
+    for(var i = 0; i < camposReq.length; i++) {
+        if (camposReq[i].value == '') {
+            contador += 1;
+        }
+    }
+    if (contador == 0 && validaUsuario() && validaSenha() && validaEmail() && validaConfSenha()) {
+        let toastLive = document.getElementById('toast-confimacao');
+        let toast = new bootstrap.Toast(toastLive);
+        toast.show();
+        limpaCampos();
+    } else {
+        let toastLive = document.getElementById('toast-erro');
+        let toast = new bootstrap.Toast(toastLive);
+        toast.show();
+    }
 }
 
-function validateEmail(e) {
+
+function validaUsuario() {
+    const nome = document.getElementById('name').value;
+    if (nome.toString().length > 3 && nome.toString().length < 16) {
+      return true
+    } else {
+      let toastLive = document.getElementById('usuario-erro');
+      let toast = new bootstrap.Toast(toastLive);
+      toast.show();
+      return false
+    }
+}
+
+function validaEmail() {
   const email = document.querySelector('#email');
   const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
-
-  if (reSpaces.test(email.value) && re.test(email.value)) {
-    email.classList.remove('is-invalid');
-    email.classList.add('is-valid');
-
-    return true;
+  const ree = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}\.([a-zA-Z]){2,5}$/;
+  const reSpaces = /^\S*$/;
+  if (reSpaces.test(email.value) && (re.test(email.value) || ree.test(email.value))) {
+      email.classList.remove('is-invalid');
+      email.classList.add('is-valid');
+      return true;
+      
   } else {
-    email.classList.add('is-invalid');
-    email.classList.remove('is-valid');
+    let toastLive = document.getElementById('email-erro');
+      let toast = new bootstrap.Toast(toastLive);
+      toast.show();
+      return false
 
     return false;
   }
 }
 
-function validatePassword() {
-  const password = document.querySelector('#password');
+
+function validaSenha() {
+  const senha = document.getElementById('password').value;
   const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
-  if (re.test(password.value) && reSpaces.test(password.value)) {
-    password.classList.remove('is-invalid');
-    password.classList.add('is-valid');
-
+  const reSpaces = /^\S*$/;
+  if (re.test(senha.value) && reSpaces.test(senha.value)) {
     return true;
   } else {
-    password.classList.add('is-invalid');
-    password.classList.remove('is-valid');
-
+    let toastLive = document.getElementById('senha-erro');
+    let toast = new bootstrap.Toast(toastLive);
+    toast.show();
     return false;
   }
 }
 
-(function () {
-  const forms = document.querySelectorAll('.needs-validation');
-
-  for (let form of forms) {
-    form.addEventListener(
-      'submit',
-      function (event) {
-        if (
-          !form.checkValidity() ||
-          !validateEmail() ||
-          !validateUsername() ||
-          !validatePassword()
-        ) {
-          event.preventDefault();
-          event.stopPropagation();
-        } else {
-          form.classList.add('was-validated');
-        }
-      },
-      false
-    );
+function validaConfSenha() {
+  const senha = document.getElementById('confirPassword').value;
+  const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
+  const reSpaces = /^\S*$/;
+  if (re.test(senha.value) && reSpaces.test(senha.value)) {
+    return true;
+  } else {
+    let toastLive = document.getElementById('confirSenha-erro');
+    let toast = new bootstrap.Toast(toastLive);
+    toast.show();
+    return false;
   }
-})();
+}
+
+var campos = document.querySelectorAll('requisito');
+
+function limpaCampos() { 
+    for(var i = 0; i < campos.length; i++) {
+        campos[i].value = ''
+    }
+}
+
+document.getElementById("name").addEventListener('focusout', validaUsuario);
+document.getElementById("email").addEventListener('focusout', validaEmail);
+document.getElementById("password").addEventListener('focusout', validaSenha);
+document.getElementById("confirPassword").addEventListener('focusout', validaConfSenha); 
+document.getElementById("btn-submit").addEventListener('click', validaFormulario);
