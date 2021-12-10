@@ -27,21 +27,25 @@ header {
 }
 
 button {
+    height: 50px;
+    line-height: 45px;
+    width: 220px;
+    position: absolute;
+    top: 5%;
+    right: 2%;
     background: #FFC600;
     color: #000;
     font-weight: bold;
     font-size: 20px;
-    border-radius: 40px;
     border: none;
+    border-radius: 40px;
     cursor: pointer;
-    height: 50px;
-    line-height: 45px;
-    width: 220px;
-}
-
-button:hover{
+    transition: .1s ease all;
+  }
+  
+  button:hover{
     background: #dbad05;
-}
+  }
 
 main {
     display: flex;
