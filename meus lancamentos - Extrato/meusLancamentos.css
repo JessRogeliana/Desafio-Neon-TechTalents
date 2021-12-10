@@ -34,7 +34,7 @@ header h1 {
 }
 
 .logo-header {
-    width: 10%;
+    width: 13%;
 }
 
 .logo-header img {
@@ -170,6 +170,7 @@ td svg:hover {
 .botao-novo-lancamento {
     width: 100%;
     margin: 0;
+    height: 4rem;
 }
 
 .neon-mensagem {
@@ -188,16 +189,28 @@ td svg:hover {
 
 
 footer {
-    background-color: white;
-    padding: 1rem;
+    background-color: #F1F4F4;
+    padding: 16px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column
 }
-
+  
 footer p {
-    margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1em;
     font-weight: bold;
+    text-align: center;
+}
+  
+.imagenes-rodape{
+    margin: 15px;
+    border-radius: 0.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  
+footer a {
+    text-decoration: none
 }
 
 
@@ -213,13 +226,16 @@ footer p {
         width: 15%;
     }
     .logo-header {
-        width: 13%;
+        width: 19%;
     }
     .container {
         width: 60%;
     }
     .neon-mensagem {
         width: 60%;
+    }
+    .logo-h1 {
+        width: 9%;
     }
 }
 
@@ -231,13 +247,16 @@ footer p {
         width: 23%;
     }
     .logo-header {
-        width: 17%;
+        width: 28%;
     }
     .container {
         width: 63%;
     }
     .neon-mensagem {
         width: 65%;
+    }
+    .logo-h1 {
+        width: 9.5%;
     }
 }
 
@@ -249,13 +268,16 @@ footer p {
         width: 30%;
     }
     .logo-header {
-        width: 22%;
+        width: 38%;
     }
     .container {
         width: 80%;
     }
     .neon-mensagem {
         width: 70%;
+    }
+    .logo-h1 {
+        width: 10%;
     }
 
 }
