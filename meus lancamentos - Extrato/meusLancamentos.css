@@ -218,7 +218,12 @@ footer p {
     font-weight: bold;
     text-align: center;
 }
-  
+
+.copy {
+    color: #2c2626;
+    opacity: 0.5;
+} 
+ 
 .imagenes-rodape{
     margin: 15px;
     border-radius: 0.3rem;
