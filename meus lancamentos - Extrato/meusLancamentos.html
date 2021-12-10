@@ -12,11 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="meusLancamentos.css">
     <title>Meus Lançamentos | Cadê Minha Grana</title>
+    <link rel="shortcut icon" type="imagex/png" href="img/cade_minha_grana-ico.ico">
 </head>
 
 <body>
 
     <header>
+        
         <button  type="submit" class="Login-boato">
             <a href="../login/index.html">                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="2.5rem" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
@@ -33,14 +35,22 @@
 
         <div class="container">
 
-            <div class="saldo-conta">
+            <section class="saldo-conta">
                 <p class="saldo-principal"> R$ 1.658,40 </p>
                 <p class="rodapé-saldo"> Saldo conta</p>
-            </div>
+            </section>
 
-            <div class="filtro">
-                <p> Filtro a ser implementado</p>
-            </div>
+            <section class="filtro">
+                <p>Filtrar por data </p>
+
+                <form name="filtro-data">
+                    <label for="data">De:</label>
+                    <input type="date" id="data-inicio" name="data-inicio">
+                    
+                    <label for="data">Até:</label>
+                    <input type="date" id="data-final" name="data-final">
+                </form>
+            </section>
 
 
             <table class="table table-borderless">
@@ -126,9 +136,11 @@
 
         </div>
 
+        <!--
         <section class="neon-mensagem">
             <img class="neon-mensagem" src="img/Cadê_Minha_Grana_mensagem-letrasMenores.png">
         </section>
+        -->
 
     </main>
 
