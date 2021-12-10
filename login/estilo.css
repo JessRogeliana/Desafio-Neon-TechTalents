@@ -1,0 +1,259 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5ce1e6;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo-header {
+    width: 25%;
+}
+
+.logo-header img {
+    width: 100%;
+}
+
+.abra-conta a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    background: #FFC600;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    line-height: 45px;
+    width: 220px;
+}
+
+button:hover{
+    background: #dbad05;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 50%;
+    border: 2px, solid #000;
+    border-radius: 80px 0px 80px 0px;
+    color: #fff;
+    background-color: #0072CC;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: auto;
+}
+
+.usuario-img{
+    border-radius: 50%;
+    top: 50px;
+}
+
+h1{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+}
+
+.login p{
+    font-weight: bold;
+}
+
+.neon-mensagem {
+    margin-top: 4%;
+}
+
+
+
+footer {
+    background-color: white;
+    margin-top: 5%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+::placeholder{
+    color: rgb(70, 66, 66);
+}
+
+#name , #password {
+    width: 100%;
+    margin-bottom: 21px;
+    border: none;
+    border-bottom: 1px solid #F1F4F4;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #F1F4F4;
+    font-size: 16px;
+}
+
+#btn-submit {
+    width: 95%;
+    border: none;
+    outline: none;
+    height: 50px;
+    color: #000;
+    font-weight: bold;
+    background: #FFC600;
+    transition: 0.2s;
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 40px;
+}
+ 
+#btn-submit:hover {
+    cursor: pointer;
+    background: #dbad05;
+    transition: 0.2s;
+}
+
+#mensagem-esqueceuSenha, #mensagem-criarConta{
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    color: #F1F4F4;
+    margin-bottom: 10px;
+}
+
+#mensagem-esqueceuSenha:hover, #mensagem-criarConta:hover{
+    transition: 00.2s;
+    color: #dbad05;
+}
+
+.error-validation {
+    color: #ff1a1a;
+    position: absolute;
+    top: 57px;
+    font-size: 12px;
+  }
+  
+  .template {
+    display: none;
+  }
+
+
+
+
+/*
+.login{
+    width: 320px;
+    height: 420px;
+    border: 2px, solid #000;
+    border-radius: 80px 0px 80px 0px;
+    color: #fff;
+    background-color: #0072CC;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   box-sizing: border-box;
+   padding: 68px 28px;
+}
+
+
+
+h1{
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+}
+
+button{
+    height: 50px;
+    line-height: 45px;
+    width: 220px;
+    top: 5%;
+    right: 2%;
+    background: #FFC600;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+
+.login p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+::placeholder{
+    color: rgb(70, 66, 66);
+  }
+
+.login input{
+    width: 100%;
+    margin-bottom: 21px;
+}
+
+.login input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #F1F4F4;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #F1F4F4;
+    font-size: 16px;
+}
+
+.login input[type="submit"]{
+   border: none;
+   outline: none;
+   height: 35px;
+   color: #000;
+   font-weight: bold;
+   font-size: 20px;
+   background: #FFC600;
+   border-radius: 20px;
+   transition: 0.2s;
+}
+
+.login input[type="submit"]:hover{
+    cursor: pointer;
+    background: #dbad05;
+    transition: 0.2s;
+}
+
+
+
+ */ 
