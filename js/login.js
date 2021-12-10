@@ -3,12 +3,12 @@
 var camposReq = document.querySelectorAll('requisito');
 
 function validaFormulario(event) {
-event.preventDefault()
-  let contador = 0
-  for(var i = 0; i < camposReq.length; i++) {
-    if (camposReq[i].value == '') {
-        contador += 1;
-    }
+  event.preventDefault()
+    let contador = 0
+    for(var i = 0; i < camposReq.length; i++) {
+        if (camposReq[i].value == '') {
+            contador += 1;
+        }
     }
     if (contador == 0 && validaUsuario() && validaSenha()) {
         let toastLive = document.getElementById('toast-confimacao');
@@ -24,15 +24,15 @@ event.preventDefault()
 
 
 function validaUsuario() {
- const nome = document.getElementById('name').value;
-   if (nome.toString().length > 3 && nome.toString().length < 16) {
-       return true
-  } else {
-    let toastLive = document.getElementById('usuario-erro');
-    let toast = new bootstrap.Toast(toastLive);
-    toast.show();
-    return false
-}
+    const nome = document.getElementById('name').value;
+    if (nome.toString().length > 3 && nome.toString().length < 16) {
+      return true
+    } else {
+      let toastLive = document.getElementById('usuario-erro');
+      let toast = new bootstrap.Toast(toastLive);
+      toast.show();
+      return false
+    }
 } 
 
 function validaSenha() {
@@ -63,6 +63,6 @@ function limpaCampos() {
 
 document.getElementById("name").addEventListener('focusout', validaUsuario);
 document.getElementById("password").addEventListener('focusout', validaSenha); 
-document.getElementById("btn-submit").addEventListener('click', validaFormulario);
+//document.getElementById("btn-submit").addEventListener('click', validaFormulario);
 
 

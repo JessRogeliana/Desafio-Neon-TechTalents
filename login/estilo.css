@@ -110,6 +110,9 @@ footer p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+footer p {
+    text-align: center;
+}
 footer a {
     text-decoration: none
     }
