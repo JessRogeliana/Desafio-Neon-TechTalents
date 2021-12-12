@@ -16,104 +16,73 @@
 
 <body>
 
-    <header>
-        <a class="logo-header" href="#"><img class="img" src="../img/Cade_Minha_Grana_maior-branca.png" alt="Icon"></a>
-
-        <div class="abra-conta">
-            <button  type="submit" ><a href="../cadastro/index.html">CRIE SUA CONTA</a></button> 
-        </div>
-    </header>
-
-
-    <main>
-        <div class="login-container">
-            <img class="usuario-img" src="../img/Neon_Blue_Pose_pascoa.png" width="100" height="100" alt="">
-            <h1>Login</h1>
-            <form id="register-form">
-                <p>Usuário</p>
-                <input type="text" name="name" id="name" placeholder="Insira seu nome de usuário" class="requisito">
-                <p>Senha</p>
-                <input type="password" name="password" id="password" placeholder="Digite sua senha" class="requisito">
-                <input id="btn-submit" type="submit" name="" value="Login">
-               
-
-                <div class="toast align-items-center text-white bg-primary border-0" style="position: absolute; top: 30%; right: 35%" role="alert" aria-live="assertive" aria-atomic="true" id="toast-confimacao">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                        Login realizado com sucesso!
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                    </div>
-                </div>
-            
-                <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 70%; right: 40%" role="alert" aria-live="assertive" aria-atomic="false" id="toast-erro">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                        Favor verificar os campos preenchidos!
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                    </div>
-                </div>
-            
-                <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 50%; right: 40%" role="alert" aria-live="assertive" aria-atomic="false" id="usuario-erro">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                        Favor digitar um usuário valido.
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                    </div>
-                </div>
-            
-                <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 60%; right: 40%" role="alert" aria-live="assertive" aria-atomic="false" id="senha-erro">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                        Favor digitar uma senha valida.
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="neon-mensagem">
-            <img class="neon-mensagem" src="../img/Cadê_Minha_Grana-mensagem.png">
-        </div>
-
-    </main>
-
-    <footer>
-        <div>
-           <a href="https://www.facebook.com/timeneon" target="_blank" rel="noopener">
-          <img src="https://cdn.iconscout.com/icon/free/png-64/facebook-logo-2019-1597680-1350125.png"
-          width="50" height="50" alt="logo facebook"/ class="imagenes-rodape">
-          </a>
     
-          <a href="https://www.linkedin.com/company/timeneon/?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNR1P8ubE7lAsGuZPw2ntfw5UDknERghQzF0E_8RKUeCVp-XvJPClYaAjHPEALw_wcB" target="_blank" rel="noopener">
-            <img src="https://cdn.iconscout.com/icon/free/png-64/linkedin-1865892-1581908.png"
-            width="48" height="48" alt="logo facebook"/ class="imagenes-rodape">
-         </a>
+        <div class="container d-flex flex-column align-items-center  wrapper">
+            <header>
+                <img  src="../img/Cade_Minha_Grana_maior-branca.png" alt="Icon">
+                <a class="btn btn-acao" href="../cadastro/index.html">CRIE SUA CONTA</a>
+            </header>
+            <main class="d-flex justify-content-center" >
+                <div id="form-container" class="p-2  d-flex flex-column align-items-center">
+                    <img src="../img/Neon_Blue_Pose_pascoa.png" width="100" height="100" alt="">
+                    <h1>Login</h1>
+                    <form id="register-form" class="d-flex flex-column">
+                        <p>Usuário</p>
+                        <input type="text" name="name" id="name" placeholder="Insira seu nome de usuário" >
+                        <p>Senha</p>
+                        <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                        <button id="btn-submit" class="btn btn-acao flex-1 mt-4 mb-4">login</button>
+                        <div class="toast align-items-center text-white bg-primary border-0" style="position: absolute; top: 30%; right: 35%" role="alert" aria-live="assertive" aria-atomic="true" id="toast-confimacao">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                Login realizado com sucesso!
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                            </div>
+                        </div>
     
-         <a href="https://twitter.com/timeneon?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNR1P8ubE7lAsGuZPw2ntfw5UDknERghQzF0E_8RKUeCVp-XvJPClYaAjHPEALw_wcB" target="_blank" rel="noopener">
-            <img src="https://cdn.iconscout.com/icon/free/png-64/twitter-53-189787.png"
-            width="48" height="48" alt="logo facebook"/ class="imagenes-rodape">
-         </a>
+                        <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 70%; right: 40%" role="alert" aria-live="assertive" aria-atomic="false" id="toast-error">
+                            <div class="d-flex">
+                                <div class="toast-body" id="toast-body">
+                               <!--Favor verificar os campos preenchidos!--> 
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                            </div>
+                        </div>
     
-         <a href="https://instagram.com/timeneon?utm_medium=copy_link" target="_blank" rel="noopener">
-            <img src="https://cdn.iconscout.com/icon/free/png-64/instagram-220-789830.png"
-            width="52" height="52" alt="logo facebook"/ class="imagenes-rodape">
-         </a>
-            
+                    </form>
+                </div>
+            </main>
+        </div>
+        <footer class="d-flex flex-column align-items-center">
+            <div class="logo-icones d-flex justify-content-center align-items-center">
+                <a href="https://www.facebook.com/timeneon" target="_blank" rel="noopener">
+                    <img src="https://cdn.iconscout.com/icon/free/png-64/facebook-logo-2019-1597680-1350125.png"
+                width="50" height="50" alt="logo facebook"/ class="imagenes-rodape">
+                </a>
+
+                <a href="https://www.linkedin.com/company/timeneon/?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNR1P8ubE7lAsGuZPw2ntfw5UDknERghQzF0E_8RKUeCVp-XvJPClYaAjHPEALw_wcB" target="_blank" rel="noopener">
+                    <img src="https://cdn.iconscout.com/icon/free/png-64/linkedin-1865892-1581908.png"
+                    width="48" height="48" alt="logo facebook"/ class="imagenes-rodape">
+                </a>
+
+                <a href="https://twitter.com/timeneon?utm_term=neon%20banco%20digital&gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNR1P8ubE7lAsGuZPw2ntfw5UDknERghQzF0E_8RKUeCVp-XvJPClYaAjHPEALw_wcB" target="_blank" rel="noopener">
+                    <img src="https://cdn.iconscout.com/icon/free/png-64/twitter-53-189787.png"
+                    width="48" height="48" alt="logo facebook"/ class="imagenes-rodape">
+                </a>
+
+                <a href="https://instagram.com/timeneon?utm_medium=copy_link" target="_blank" rel="noopener">
+                    <img src="https://cdn.iconscout.com/icon/free/png-64/instagram-220-789830.png"
+                    width="52" height="52" alt="logo facebook"/ class="imagenes-rodape">
+                </a>
+
             </div>
             <div class="copy">
-              <p>© Copyright 2021. Todos os direitos reservados. <br>
-                    Atendimento: oi@neon.com.br (24 horas) <br>
-                      Imprensa: imprensa@neon.com.br
-              </p>
-              
+                <p>© Copyright 2021. Todos os direitos reservados.</p>
+                <p>Atendimento: oi@neon.com.br (24 horas)</p>      
+                <p>Imprensa: imprensa@neon.com.br</p>
             </div>
         </footer>
 
@@ -124,3 +93,4 @@
 
 </body>
 </html>
+

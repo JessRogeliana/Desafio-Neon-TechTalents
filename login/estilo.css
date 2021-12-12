@@ -1,186 +1,104 @@
-*{
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Cores*/
+:root {
+    --cor-principal: #0CD8D7;
+    --cor-amarelho: #FFC800;
+    --cor-azul-escuro: #0072CC;
+    --dark-text: rgb(70,66,66);
 }
 
 body {
-    background-color: #0cd8d8;
-    font-family: 'Inter', sans-serif;
+    background: var(--cor-principal);
 }
 
+/*Header*/
 header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-}
-
-.logo-header {
-    width: 25%;
-}
-
-.logo-header img {
+    align-items: center;
     width: 100%;
 }
 
-.abra-conta a {
-    text-decoration: none;
-    color: #000;
+@media (max-width: 767px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
-button {
-    height: 50px;
-    line-height: 45px;
-    width: 220px;
-    position: absolute;
-    top: 5%;
-    right: 2%;
-    background: #FFC600;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: .1s ease all;
-  }
-  
-  button:hover{
-    background: #dbad05;
-  }
+header img {
+    width: 200px;
+}
 
+.btn.btn-acao {
+    background: var(--cor-amarelho);
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+
+/*Main*/
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 16px auto; 
 }
-
-.login-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    height: 50%;
-    border: 2px, solid #000;
-    border-radius: 80px 0px 80px 0px;
-    color: #fff;
-    background-color: #0072CC;
-    box-sizing: border-box;
-    padding: 10px;
-    margin: auto;
-}
-
-.usuario-img{
-    border-radius: 50%;
-    top: 50px;
-}
-
-h1{
-    padding-top: 5px;
-    padding-bottom: 20px;
-    letter-spacing: 10px;
+main  h1 {
+    color: white;
+    font-size: 24px;
     text-transform: uppercase;
-    text-align: center;
-    font-size: 25px;
+    letter-spacing: 8px;
+}
+#form-container {
+    background: var(--cor-azul-escuro);
+    width: 400px;
+    border-radius: 80px 0 80px 0 ;
+    
+}
+@media (max-width: 470px) {
+    #form-container {
+        width: 100%;
+    }
 }
 
-.login p{
-    font-weight: bold;
+#register-form {
+    width: calc(100% - 80px)
 }
 
-.neon-mensagem {
-    margin-top: 4%;
+#register-form p {
+    color:white;
+    font-weight: bold; 
 }
 
+#register-form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 4px;
+}
 
+#register-form input::placeholder {
+    color: var(--dark-text);
+}
 
 footer {
     background-color: white;
-    margin-top: 5%;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column
+    padding: 16px 8px;
 }
-
-footer p {
-    font-size: 1em;
-    font-weight: bold;
-
-}
-
-.imagenes-rodape{
-    margin: 15px;
-    border-radius: 0.3rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-footer p {
-    text-align: center;
-}
-footer a {
-    text-decoration: none
-    }
-    
-::placeholder{
-    color: rgb(70, 66, 66);
-}
-
-#name , #password {
+footer .logo-icones{
     width: 100%;
-    margin-bottom: 21px;
-    border: none;
-    border-bottom: 1px solid #F1F4F4;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #F1F4F4;
-    font-size: 16px;
 }
-
-#btn-submit {
-    width: 95%;
-    border: none;
-    outline: none;
-    height: 50px;
-    color: #000;
-    font-weight: bold;
-    background: #FFC600;
-    transition: 0.2s;
-    padding: 5px;
-    margin: 10px;
-    font-size: 20px;
-    border-radius: 40px;
+footer .logo-icones a {
+    margin: auto 4px;
 }
- 
-#btn-submit:hover {
-    cursor: pointer;
-    background: #dbad05;
-    transition: 0.2s;
-}
+ footer p {
+     margin-bottom: 0;
+ }
 
-#mensagem-esqueceuSenha, #mensagem-criarConta{
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 15px;
-    line-height: 20px;
-    color: #F1F4F4;
-    margin-bottom: 10px;
-}
-
-#mensagem-esqueceuSenha:hover, #mensagem-criarConta:hover{
-    transition: 00.2s;
-    color: #dbad05;
-}
-
-.error-validation {
-    color: #ff1a1a;
-    position: absolute;
-    top: 57px;
-    font-size: 12px;
-  }
-  
-  .template {
-    display: none;
-  }
-
-
+ footer .copy p {
+     text-align: center;
+     font-weight: bold;
+ }

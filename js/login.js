@@ -1,68 +1,47 @@
 /*MENSAGEM E VALIDAÇÃO CAMPOS*/ 
 
-var camposReq = document.querySelectorAll('requisito');
+const toastLive = document.getElementById('toast-error');
+const formulario = document.getElementById('register-form')
+
+
+formulario.addEventListener('submit', validaFormulario)
+
+function showToast (mensagem) {
+  let toast = new bootstrap.Toast(toastLive);
+  const toastBody = document.getElementById('toast-body')
+  toastBody.innerText = mensagem
+  toast.show();
+}
 
 function validaFormulario(event) {
-  event.preventDefault()
-    let contador = 0
-    for(var i = 0; i < camposReq.length; i++) {
-        if (camposReq[i].value == '') {
-            contador += 1;
-        }
-    }
-    if (contador == 0 && validaUsuario() && validaSenha()) {
-        let toastLive = document.getElementById('toast-confimacao');
-        let toast = new bootstrap.Toast(toastLive);
-        toast.show();
-        limpaCampos();
-    } else {
-        let toastLive = document.getElementById('toast-erro');
-        let toast = new bootstrap.Toast(toastLive);
-        toast.show();
-    }
+
+  event.preventDefault()   
+    if ( validaUsuario() && validaSenha()) {
+        formulario.reset();
+    } 
 }
 
 
 function validaUsuario() {
-    const nome = document.getElementById('name').value;
-    if (nome.toString().length > 3 && nome.toString().length < 16) {
+  const formData = new FormData(formulario)
+    
+    if (formData.get('name').length > 3 && formData.get('name').length < 16) {
       return true
     } else {
-      let toastLive = document.getElementById('usuario-erro');
-      let toast = new bootstrap.Toast(toastLive);
-      toast.show();
+      
+      showToast('O nome de usuario precisa de 3 a 16 caracteres')
       return false
     }
 } 
 
 function validaSenha() {
-  const senha = document.getElementById('password').value;
-  const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
+  const formData = new FormData(formulario)
+  const re = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
   const reSpaces = /^\S*$/;
-  if (re.test(senha.value) && reSpaces.test(senha.value)) {
+  if (re.test(formData.get('password')) && reSpaces.test(formData.get('password'))) {
     return true;
   } else {
-    let toastLive = document.getElementById('senha-erro');
-    let toast = new bootstrap.Toast(toastLive);
-    toast.show();
+    showToast('A senha tem de incluir mayusculas, minusculas, numeros e um simbolo')
     return false;
   }
 }
-
-
-var campos = document.querySelectorAll('requisito');
-
-function limpaCampos() { 
-    for(var i = 0; i < campos.length; i++) {
-        campos[i].value = ''
-    }
-}
-
-
-/* CHAMADAS */
-
-document.getElementById("name").addEventListener('focusout', validaUsuario);
-document.getElementById("password").addEventListener('focusout', validaSenha); 
-//document.getElementById("btn-submit").addEventListener('click', validaFormulario);
-
-
