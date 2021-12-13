@@ -41,7 +41,7 @@ function validaSenha() {
   if (re.test(formData.get('password')) && reSpaces.test(formData.get('password'))) {
     return true;
   } else {
-    showToast('A senha tem de incluir mayusculas, minusculas, numeros e um simbolo')
+    showToast('A senha tem que incluir maiusculas, minusculas, números e um simbolo')
     return false;
   }
 }
