@@ -1,97 +1,131 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-  }
-
-body{
     margin: 0;
     padding: 0;
-    background-color: #00A5F0;
-    background-size: cover;
-    font-family: "Comfortaa", sans-serif;
 }
 
-.logo-header img{
-    width: 20%;
-    position: absolute;
-    top: -5%; 
-    left: -3%;
-  }
-
-  .user{
-    width: 650px;
-    border-radius: 20%;
-    position: absolute;
-    top: 60%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-   box-sizing: border-box;
+/*Cores*/
+:root {
+    --cor-principal: #0CD8D7;
+    --cor-amarelho: #FFC800;
+    --cor-azul-escuro: #0072CC;
+    --dark-text: rgb(70,66,66);
 }
 
-button[type="submit"]{
-    height: 50px;
-    line-height: 45px;
-    width: 220px;
-    position: absolute;
-    top: 5%;
-    right: 2%;
-    background: #FFC600;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: .1s ease all;
+body {
+    background: var(--cor-principal);
+    
 }
 
-button[type="submit"]:hover{
-    background: #dbad05;
+.all {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
-.abra-conta a:visited{
-    color: #000;
-}
-
-.login{
-    width: 320px;
-    height: 420px;
-    border: 2px, solid #000;
-    border-radius: 80px 0px 80px 0px;
-    color: #fff;
-    background-color: #0072CC;
-    top: 62%;
-    left: 60%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-   box-sizing: border-box;
-   padding: 68px 28px;
-}
-
-.usuario{
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: 112px;
-}
-
-h1{
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 20px;
-    letter-spacing: 10px;
-    text-transform: uppercase;
+/*Header*/
+header {
+    width: 85%;
     text-align: center;
-    font-size: 25px;
+    display: flex;
+    align-items: baseline;
+    place-content: space-between;
+    font-weight: bold;
+    margin: 0 auto;
 }
 
-.login p{
-    margin: 0;
-    padding: 0;
+header h3 {
+    color: white;
+    display: inline;
+}
+@media (max-width: 1120px){
+    .imagen-flotante {
+        display: none;
+    }
+
+}
+@media (max-width: 767px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    
+
+    main {
+        width: 90%;
+    }
+
+    
+}
+
+
+.btn.btn-acao {
+    background: var(--cor-amarelho);
+    border-radius: 30px;
     font-weight: bold;
+}
+
+
+/*Main*/
+
+.imagen-flotante {
+    place-self: center;
+    position: absolute;
+    left: 0;
+}
+
+main  h1 {
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+#form-container {
+    background: var(--cor-azul-escuro);
+    width: 400px;
+    border-radius: 80px 0 80px 0 ;
+}
+span {
+    font-size: 12px;
+    display: block;
+}
+.copy {
+    text-align: center;
+}
+@media (max-width: 470px) {
+    #form-container {
+        width: 100%;
+    }
+}
+
+#register-form {
+    width: calc(100% - 80px)
+}
+
+#register-form p {
+    color:white;
+    font-weight: bold; 
+}
+
+#register-form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 3px;
+}
+
+#register-form input::placeholder {
+    color: var(--dark-text);
 }
 
 footer {
@@ -121,26 +155,7 @@ footer .logo-icones a {
      margin-bottom: 0;
  }
 
-.login a{
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: #F1F4F4;
-}
-
-.login a:hover{
-    transition: 00.2s;
-    color: #dbad05;
-}
-
-.error-validation {
-    color: #ff1a1a;
-    position: absolute;
-    top: 57px;
-    font-size: 12px;
-  }
-  
-  .template {
-    display: none;
-  }
+ footer .copy p {
+     text-align: center;
+     font-weight: bold;
+ }
