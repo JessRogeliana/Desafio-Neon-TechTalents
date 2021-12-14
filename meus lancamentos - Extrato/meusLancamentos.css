@@ -8,7 +8,6 @@ body {
     box-sizing: border-box;
 }
 
-
 /*CABEÇALHO*/
 
 
@@ -99,14 +98,15 @@ main {
 
 .saldo-principal {
     font-size: 2.5rem;
-    margin-top: 1rem;
     font-weight: bold;
     color: green;
 }
 
-.rodapé-saldo {
+.descricao-saldo {
     font-size: 1.5rem;
-    color: black;
+    color: #212529;
+    font-weight: bold;
+    margin-top: 1rem;
 }
 
 .filtro p, label {
@@ -333,11 +333,58 @@ footer a {
         width: 75%;
     }
     */
+    
+}
+
+@media (max-width: 531px) {
+    html {
+        font-size: 50%;
+    }
+    button {
+        width: 30%;
+    }
+    .logo-header {
+        visibility: hidden; 
+    }
+    .container {
+        width: 90%;
+    }
+    main {
+        padding: 8rem 4.5rem 8rem 4.5rem;
+    }
+    /*
+    .neon-mensagem {
+        width: 75%;
+    }
+    */
+}
+
+@media (max-width: 485px) {
+    html {
+        font-size: 50%;
+    }
+    button {
+        width: 30%;
+    }
+    .logo-header {
+        visibility: hidden; 
+    }
+    .container {
+        width: 95%;
+    }
+    main {
+        padding: 8rem 2rem 8rem 2rem;
+    }
+    /*
+    .neon-mensagem {
+        width: 75%;
+    }
+    */
 }
 
 @media (max-width: 425px) {
     .container {
-        width: 95%;
+        width: 100%;
     }
     .button {
         margin-left: 1rem;
@@ -354,34 +401,11 @@ footer a {
     }
     */
     main {
-        padding: 4.5rem;
-        padding-top: 6rem;
+        padding: 8rem 0 8rem 0;
     }
-    input {
-        
-    }
-}
-
-@media (max-width: 375px) {
-    .container {
-        width: 100%;
-    }
-    .button {
-        margin-left: 1rem;
-    }
-    .logo-h1 {
-        width: 0%;
-    }
-    header h1 {
-        padding: 1.5rem;
-    }
-    /*
-    .neon-mensagem {
-        width: 90%;
-    }
-    */
-    html {
-        font-size: 45%;
+    footer div a img {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -405,5 +429,33 @@ footer a {
     */
     html {
         font-size: 45%;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        width: 100%;
+        padding: 1rem 0 1rem 0;
+    }
+    .button {
+        margin-left: 1rem;
+    }
+    .logo-h1 {
+        width: 0%;
+    }
+    header h1 {
+        padding: 1.5rem;
+    }
+    /*
+    .neon-mensagem {
+        width: 90%;
+    }
+    */
+    html {
+        font-size: 45%;
+    }
+    footer div a img {
+        width: 30px;
+        height: 30px;
     }
 }

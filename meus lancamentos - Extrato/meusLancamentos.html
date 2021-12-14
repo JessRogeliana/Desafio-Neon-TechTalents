@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="meusLancamentos.css">
+    <link rel="shortcut icon" type="imagex/png" href="../img/cade_minha_grana-ico.ico">
     <title>Meus Lançamentos | Cadê Minha Grana</title>
-    <link rel="shortcut icon" type="imagex/png" href="img/cade_minha_grana-ico.ico">
 </head>
 
 <body>
@@ -25,8 +25,8 @@
                 </svg>
             </a>
         </button> 
-        <h1> Meus Lançamentos <img class="logo-h1" src="img/jovem_moeda_investindo.png"></h1> 
-        <a class="logo-header" href="#"><img class="img" src="img/jovem_enterrando_moeda-inverso-zoom.png" alt="Icon"></a>
+        <h1> Meus Lançamentos <img class="logo-h1" src="../img/jovem_moeda_investindo.png"></h1> 
+        <a class="logo-header" href="#"><img class="img" src="../img/jovem_enterrando_moeda-inverso-zoom.png" alt="Icon"></a>
     </header>
 
 
@@ -35,8 +35,8 @@
         <div class="container">
 
             <section class="saldo-conta">
-                <p class="saldo-principal"> R$ 1.658,40 </p>
-                <p class="rodapé-saldo"> Saldo conta</p>
+                <p class="descricao-saldo"> Saldo conta</p>
+                <p class="saldo-principal"> R$ 1.658,40 </p>               
             </section>
 
             <section class="filtro">
@@ -45,7 +45,7 @@
                 <form name="filtro-data">
                     <label for="data">De:</label>
                     <input type="date" id="data-inicio" name="data-inicio">
-                    
+              
                     <label for="data">Até:</label>
                     <input type="date" id="data-final" name="data-final">
                 </form>
@@ -55,17 +55,19 @@
             <table class="table table-borderless">
                 <thead>
                     <tr>
-                        <th class="table-coluna" scope="col">Título</th>
-                        <th class="table-coluna" scope="col">Custo</th>
-                        <th class="table-coluna" scope="col">Data</th>
-                        <th class="table-coluna" scope="col">Ações</th>
+                        <th class="table-coluna" class="item-titulo" scope="col">Ítem</th>
+                        <th class="table-coluna" class="data-titulo" scope="col">Data</th>
+                        <th class="table-coluna" class="tipo-titulo" scope="col">Tipo</th>
+                        <th class="table-coluna" class="valor-titulo" scope="col">Valor</th>
+                        <th class="table-coluna" class="acoes-titulo" scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">Netflix</th>
-                        <td class="false" >R$ 39,90</td>
-                        <td>01/08/2021</td>
+                        <th class="item" scope="row">Netflix</th>
+                        <td class="data">01/08/2021</td>
+                        <td class="tipo">Saída</td>
+                        <td class="valor false">R$ 39,90</td>
                         <td>
                             <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
@@ -77,9 +79,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Luz</th>
-                        <td class="false">R$ 60,50</td>
-                        <td>03/08/2021</td>
+                        <th class="item" scope="row">Luz</th>
+                        <td class="data">03/08/2021</td>
+                        <td class="tipo">Saída</td>
+                        <td class="valor false">R$ 60,50</td>
                         <td>
                             <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
@@ -91,9 +94,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Água</th>
-                        <td class="false">R$ 41,20</td>
-                        <td>05/08/2021</td>
+                        <th class="item" scope="row">Água</th>
+                        <td class="data">05/08/2021</td>
+                        <td class="tipo">Saída</td>
+                        <td class="valor false">R$ 41,20</td>
                         <td>
                             <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
@@ -105,9 +109,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Venda Celular</th>
-                        <td class="true">R$ 1.800,00</td>
-                        <td>05/08/2021</td>
+                        <th class="item" scope="row">Venda Celular</th>
+                        <td class="data">05/08/2021</td>
+                        <td class="tipo">Entrada</td>
+                        <td class="valor true">R$ 1.800,00</td>
                         <td>
                             <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
