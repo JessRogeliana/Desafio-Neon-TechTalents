@@ -1,23 +1,23 @@
 const {cliente} = require('../database/db');
+
+
+
 module.exports = {
- async buscaId(req, res) {
+ async buscaCliente(req, res) {
   
   try {
-      const cliente = await cliente.findByPk(req.params.id);
-         if (cliente) {
+      const Cliente = await cliente.findByPk(req.params.id);
+      console.log(Cliente)
+         if (Cliente) {
          res.json({
          status: 200,
-            data: {
-                  "client_id": cliente.id,
-                  "nome": cliente.nome,
-                  "email": cliente.email,
-                  }
+            data: Cliente
                 });
         } else {
-          res.status(400).send(400)
+          res.json("400")
                }
             } catch (error) {
-          res.status(400).send(400)
+          res.json("400")
             }
   
           }, 

@@ -1,8 +1,9 @@
 const express = require('express');
-const clienteController = require('../app/controllers/controllerCliente');
+const controllerCliente = require('../app/controllers/controllerCliente');
+
 const clienteRouter = express.Router();
 
-clienteRouter.get('/api/cliente/:id',clienteController.buscaId);
+clienteRouter.get("/cliente/:id", controllerCliente.buscaCliente)
 
 
 module.exports = clienteRouter

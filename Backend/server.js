@@ -10,6 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); 
 
 
+app.use(require('./routes/routerCliente'))
+
+
+app.use(require('./routes/routerCliente'));
 app.listen(PORT, function () {
   console.log(`successfully initialized http://localhost:${PORT}`);
 
