@@ -7,11 +7,12 @@
 html {
     height: 100%;
     min-height: 100%;
+    font-size: 85%;
 }
 
 /*Cores*/
 :root {
-    --cor-principal: #0CD8D7;
+    --cor-principal: #5ce1e6;
     --cor-amarelho: #FFC800;
     --cor-azul-escuro: #0072CC;
     --dark-text: rgb(70,66,66);
@@ -41,6 +42,7 @@ header {
 
 header h3 {
     color: white;
+    font-size: 3rem;
 }
 
 .header {
@@ -60,11 +62,29 @@ header h3 {
 }
 
 .btn.btn-acao {
-    background: var(--cor-amarelho);
-    border-radius: 30px;
+    background: #FFC600;
+    color: #000;
     font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    height: 3em;
+    line-height: 3rem;
+    width: 100%;
+    /*margin-left: 3rem;*/
+    margin: 0;
+    margin-top: 1em;
 }
 
+.btn.btn-acao:hover {
+    background: #dbad05;
+    color: #000;
+}
+
+.btn.btn-acao a:hover {
+    text-decoration: none;
+    color: #000;
+}
 
 /*Main*/
 
@@ -73,19 +93,19 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 6rem;
-    padding-top: 18rem;
+    padding-top: 30rem;
     position: absolute;
 }
 
 
 main  h1 {
     color: white;
-    font-size: 24px;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 8px;    
 }
 
-p {
+#form-container p {
     margin-bottom: 5px;
 }
 
@@ -97,29 +117,29 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    height: 50%;
+    width: 65%;
+    height: 55%;
     border-radius: 4rem 0 4rem 0;
     color: #fff;
     background-color: #0072CC;
     box-sizing: border-box;
-    padding: 2rem;
-    margin: auto;
+    padding: 3rem;
+    margin: 0;
 }
 
 span {
-    font-size: 12px;
+    font-size: 1.5rem;
     display: block;
 }
 
-
 #register-form {
-    width: calc(100% - 80px)
+    width: 85%;
 }
 
 #register-form p {
     color:white;
     font-weight: bold; 
+    font-size: 1.5rem;
 }
 
 #register-form input {
@@ -127,15 +147,44 @@ span {
     border: none;
     border-bottom: 1px solid white;
     padding: 3px;
+    font-size: 1.5rem;
 }
 
 #register-form input::placeholder {
     color: var(--dark-text);
 }
 
+.botao-formulario {
+    width: 100%;
+    margin: 0;
+    height: 4rem;
+    background: #FFC600;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    line-height: 3rem;
+    margin-top: 4%;
+}
+
+.botao-formulario:hover {
+    background: #dbad05;
+    color: #000;
+}
+
+.botao-formulario a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*NEON MENSAGEM*/
+
 .neon-mensagem {
-    width: 50%;
-    padding-top: 2rem;
+    width: 40%;
+    margin-top:18%;
+    margin-bottom: 3%;
 }
 
 .neon-mensagem img {
@@ -155,7 +204,7 @@ footer {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-top:25%;
+    margin-top: 3rem;
 }
   
 footer p {
@@ -181,27 +230,273 @@ footer a {
 
 
 /* RESPONSIVIDADE */
-/*
-@media (max-width: 1120px){
-    .imagen-flotante {
-        display: none;
+
+@media (max-width: 2367px) {
+    .img-header {
+        width: 21%;
     }
-
-}
-
-@media (max-width: 767px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-    } 
-
     main {
-        width: 90%;
+        padding-top: 20rem;
+    }
+    #form-container {
+        width: 60%;
+    }    
+    .neon-mensagem {
+        width: 45%;
+        margin-top:20%;
     }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 2019px) {
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 21rem;
+    }
+    #form-container {
+        width: 60%;
+    }  
+    .neon-mensagem {
+        width: 45%;
+        margin-top:25%;
+    }
+}
+
+@media (max-width: 1933px) {
+    html {
+        font-size: 80%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 55%;
+    }  
+    .neon-mensagem {
+        width: 43%;
+        margin-top:25%;
+    }
+}
+
+@media (max-width: 1722px) {
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 50%;
+    }  
+    .neon-mensagem {
+        width: 45%;
+        margin-top:30%;
+    }
+}
+
+@media (max-width: 1513px) {
+    html {
+        font-size: 70%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 52%;
+    }  
+    .neon-mensagem {
+        width: 45%;
+        margin-top:34%;
+    }
+}
+
+@media (max-width: 1332px) {
+    html {
+        font-size: 70%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 54%;
+    }  
+    .neon-mensagem {
+        width: 46%;
+        margin-top:41%;
+    }
+}
+
+@media (max-width: 1107px) {
+    html {
+        font-size: 67%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width:56%;
+    }  
+    .neon-mensagem {
+        width: 48%;
+        margin-top:43%;
+    }
+}
+
+@media (max-width: 1012px) {
+    html {
+        font-size: 64%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width:58%;
+    }  
+    .neon-mensagem {
+        width: 50%;
+        margin-top:47%;
+    }
+}
+
+
+@media (max-width: 930px) {
+    html {
+        font-size: 62%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width: 60%;
+    }  
+    .neon-mensagem {
+        width: 52%;
+        margin-top:50%;
+    }
+}
+
+@media (max-width: 811px) {
+    html {
+        font-size: 60%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 17rem;
+    }
+    #form-container {
+        width: 65%;
+    }  
+    .neon-mensagem {
+        width: 56%;
+        margin-top:55%;
+    }
+}
+
+@media (max-width: 725px) {
+    html {
+        font-size: 58%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width: 70%;
+    }  
+    .neon-mensagem {
+        width: 60%;
+        margin-top:67%;
+    }
+}
+
+@media (max-width: 634px) {
+    html {
+        font-size: 54%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        position:initial;
+        padding-top: 0;
+    }
+    #form-container {
+        width: 80%;
+    }  
+    .neon-mensagem {
+        width: 63%;
+        margin-top:1.5rem;
+    }
+}
+
+@media (max-width: 491px) {
+    html {
+        font-size: 50%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        position:initial;
+        padding-top: 2rem;
+    }
+    #form-container {
+        width: 95%;
+    }  
+    .neon-mensagem {
+        width: 65%;
+        margin-top:1rem;
+    }
+    footer div a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: 50%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        position:initial;
+        padding: 0;
+        padding-top: 5rem;
+    }
     #form-container {
         width: 100%;
+    }  
+    .neon-mensagem {
+        width: 72%;
+        margin-top:4rem;
+    }
+    footer div a img {
+        width: 40px;
+        height: 40px;
     }
 }
