@@ -1,156 +1,502 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-  }
-
-body{
     margin: 0;
     padding: 0;
-    background-color: #00A5F0;
-    background-size: cover;
-    font-family: "Comfortaa", sans-serif;
 }
 
-.logo-header img{
-    width: 20%;
-    position: absolute;
-    top: -5%; 
-    left: -3%;
-  }
-
-  .user{
-    width: 650px;
-    border-radius: 20%;
-    position: absolute;
-    top: 60%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-   box-sizing: border-box;
+html {
+    height: 100%;
+    min-height: 100%;
+    font-size: 85%;
 }
 
-button[type="submit"]{
-    height: 50px;
-    line-height: 45px;
-    width: 220px;
-    position: absolute;
-    top: 5%;
-    right: 2%;
+/*Cores*/
+:root {
+    --cor-principal: #5ce1e6;
+    --cor-amarelho: #FFC800;
+    --cor-azul-escuro: #0072CC;
+    --dark-text: rgb(70,66,66);
+}
+
+
+/*Geral*/
+
+body {
+    background: var(--cor-principal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*Header*/
+
+header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+header h3 {
+    color: white;
+    font-size: 3rem;
+}
+
+.header {
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-weight: bold;
+    flex-grow: 1;
+    margin: 5% 5% 0 0;
+}
+
+.img-header {
+    width: 22%;
+    display: flex;
+    justify-self: flex-start;
+}
+
+.btn.btn-acao {
     background: #FFC600;
     color: #000;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5rem;
+    border-radius: 3rem;
     border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: .1s ease all;
+    height: 3em;
+    line-height: 3rem;
+    width: 100%;
+    /*margin-left: 3rem;*/
+    margin: 0;
+    margin-top: 1em;
 }
 
-button[type="submit"]:hover{
+.btn.btn-acao:hover {
     background: #dbad05;
-}
-
-.abra-conta a:visited{
     color: #000;
 }
 
-.login{
-    width: 320px;
-    height: 420px;
-    border: 2px, solid #000;
-    border-radius: 80px 0px 80px 0px;
+.btn.btn-acao a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+/*Main*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem;
+    padding-top: 30rem;
+    position: absolute;
+}
+
+
+main  h1 {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 8px;    
+}
+
+#form-container p {
+    margin-bottom: 5px;
+}
+
+.img-login {
+    width: 30%;
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+    height: 55%;
+    border-radius: 4rem 0 4rem 0;
     color: #fff;
     background-color: #0072CC;
-    top: 62%;
-    left: 60%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-   box-sizing: border-box;
-   padding: 68px 28px;
-}
-
-.usuario{
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: 112px;
-}
-
-h1{
+    box-sizing: border-box;
+    padding: 3rem;
     margin: 0;
-    padding-top: 0;
-    padding-bottom: 20px;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 25px;
 }
 
-.login p{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+span {
+    font-size: 1.5rem;
+    display: block;
 }
 
-::placeholder{
-    color: rgb(70, 66, 66);
-  }
-
-.login input{
-    width: 100%;
-    margin-bottom: 21px;
+#register-form {
+    width: 85%;
 }
 
-.login input[type="text"], input[type="password"] {
+#register-form p {
+    color:white;
+    font-weight: bold; 
+    font-size: 1.5rem;
+}
+
+#register-form input {
+    background: none;
     border: none;
-    border-bottom: 1px solid #F1F4F4;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #F1F4F4;
-    font-size: 16px;
+    border-bottom: 1px solid white;
+    padding: 3px;
+    font-size: 1.5rem;
 }
 
-.login input[type="submit"]{
-   border: none;
-   outline: none;
-   height: 35px;
-   color: #000;
-   font-weight: bold;
-   font-size: 20px;
-   background: #FFC600;
-   border-radius: 20px;
-   transition: 0.2s;
+#register-form input::placeholder {
+    color: var(--dark-text);
 }
 
-.login input[type="submit"]:hover{
-    cursor: pointer;
-    background: #dbad05;
-    transition: 0.2s;
-}
-
-.login a{
+.botao-formulario {
+    width: 100%;
+    margin: 0;
+    height: 4rem;
+    background: #FFC600;
+    color: #000;
     font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    line-height: 3rem;
+    margin-top: 4%;
+}
+
+.botao-formulario:hover {
+    background: #dbad05;
+    color: #000;
+}
+
+.botao-formulario a:hover {
     text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: #F1F4F4;
+    color: #000;
 }
 
-.login a:hover{
-    transition: 00.2s;
-    color: #dbad05;
+
+/*NEON MENSAGEM*/
+
+.neon-mensagem {
+    width: 40%;
+    margin-top:18%;
+    margin-bottom: 3%;
 }
 
-.error-validation {
-    color: #ff1a1a;
-    position: absolute;
-    top: 57px;
-    font-size: 12px;
-  }
+.neon-mensagem img {
+    display: flex;
+    justify-self: center;
+    margin: auto;
+}
+
+
+/*FOOTER*/
+
+footer {
+    background-color: #F1F4F4;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3rem;
+}
   
-  .template {
-    display: none;
-  }
+footer p {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.copy {
+    color: #2c2626;
+    opacity: 0.5;
+} 
+ 
+.imagenes-rodape{
+    margin: 15px;
+    border-radius: 0.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  
+footer a {
+    text-decoration: none
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 2367px) {
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 20rem;
+    }
+    #form-container {
+        width: 60%;
+    }    
+    .neon-mensagem {
+        width: 45%;
+        margin-top:20%;
+    }
+}
+
+@media (max-width: 2019px) {
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 21rem;
+    }
+    #form-container {
+        width: 60%;
+    }  
+    .neon-mensagem {
+        width: 45%;
+        margin-top:25%;
+    }
+}
+
+@media (max-width: 1933px) {
+    html {
+        font-size: 80%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 55%;
+    }  
+    .neon-mensagem {
+        width: 43%;
+        margin-top:25%;
+    }
+}
+
+@media (max-width: 1722px) {
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 50%;
+    }  
+    .neon-mensagem {
+        width: 45%;
+        margin-top:30%;
+    }
+}
+
+@media (max-width: 1513px) {
+    html {
+        font-size: 70%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 52%;
+    }  
+    .neon-mensagem {
+        width: 45%;
+        margin-top:34%;
+    }
+}
+
+@media (max-width: 1332px) {
+    html {
+        font-size: 70%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 22rem;
+    }
+    #form-container {
+        width: 54%;
+    }  
+    .neon-mensagem {
+        width: 46%;
+        margin-top:41%;
+    }
+}
+
+@media (max-width: 1107px) {
+    html {
+        font-size: 67%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width:56%;
+    }  
+    .neon-mensagem {
+        width: 48%;
+        margin-top:43%;
+    }
+}
+
+@media (max-width: 1012px) {
+    html {
+        font-size: 64%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width:58%;
+    }  
+    .neon-mensagem {
+        width: 50%;
+        margin-top:47%;
+    }
+}
+
+
+@media (max-width: 930px) {
+    html {
+        font-size: 62%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width: 60%;
+    }  
+    .neon-mensagem {
+        width: 52%;
+        margin-top:50%;
+    }
+}
+
+@media (max-width: 811px) {
+    html {
+        font-size: 60%;
+    }
+    .img-header {
+        width: 21%;
+    }
+    main {
+        padding-top: 17rem;
+    }
+    #form-container {
+        width: 65%;
+    }  
+    .neon-mensagem {
+        width: 56%;
+        margin-top:55%;
+    }
+}
+
+@media (max-width: 725px) {
+    html {
+        font-size: 58%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        padding-top: 18rem;
+    }
+    #form-container {
+        width: 70%;
+    }  
+    .neon-mensagem {
+        width: 60%;
+        margin-top:67%;
+    }
+}
+
+@media (max-width: 634px) {
+    html {
+        font-size: 54%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        position:initial;
+        padding-top: 0;
+    }
+    #form-container {
+        width: 80%;
+    }  
+    .neon-mensagem {
+        width: 63%;
+        margin-top:1.5rem;
+    }
+}
+
+@media (max-width: 491px) {
+    html {
+        font-size: 50%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        position:initial;
+        padding-top: 2rem;
+    }
+    #form-container {
+        width: 95%;
+    }  
+    .neon-mensagem {
+        width: 65%;
+        margin-top:1rem;
+    }
+    footer div a img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: 50%;
+    }
+    .img-header {
+        width: 20%;
+    }
+    main {
+        position:initial;
+        padding: 0;
+        padding-top: 5rem;
+    }
+    #form-container {
+        width: 100%;
+    }  
+    .neon-mensagem {
+        width: 72%;
+        margin-top:4rem;
+    }
+    footer div a img {
+        width: 40px;
+        height: 40px;
+    }
+}
