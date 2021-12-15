@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use(require('./routes/routerCliente'))
+app.use(require('./routes/routerLancamento'))
+
 
 
 app.use(require('./routes/routerCliente'));

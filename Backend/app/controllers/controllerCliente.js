@@ -21,4 +21,48 @@ module.exports = {
             }
   
           }, 
-        };
+
+        async criarCliente(req, res) {
+          try {
+            if (
+              req.body.nome &&
+              req.body.email &&
+              req.body.senha 
+            ) {
+              const criandoCliente = await cliente.create({
+                nome: req.body.nome,
+                email: req.body.email,
+                senha: req.body.senha
+              });
+              res.status(201).json({
+                message: "Lançamento feito Com Sucesso!",
+                status: 201,
+                statusText: "Created",
+                message: "Lançamento feito Com Sucesso!",
+                data: cliente,
+              });
+            } else {
+              res.status(400).send({
+                status: 400,
+                statusText: "Bad Request",
+                message: "Não cadastrado!",
+              }),
+                console.log("Não cadastrado!");
+              return;
+            }
+          } catch (error) {
+            res.status(400).send({
+              status: 400,
+              statusText: "Bad Request",
+              message: "Falha no cadastro. Verifique os Dados!",
+            }),
+              console.log("Falha no cadastro. Verifique os Dados!");
+          }
+        }
+
+
+
+
+
+
+      };

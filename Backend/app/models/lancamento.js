@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+    lancamento.belongsTo(models.cliente, {as:"Balance", foreignKey:"idCliente"})
     }
   };
   lancamento.init({

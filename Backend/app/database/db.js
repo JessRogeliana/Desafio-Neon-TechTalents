@@ -8,6 +8,10 @@ db.connection = new Sequelize (
 
     db.cliente = require ('../models/cliente')(db.connection, DataTypes)
     db.lancamento = require ('../models/lancamento')(db.connection, DataTypes)
+
+
+    db.cliente.associate(db)
+    db.lancamento.associate(db)
     
     
     
