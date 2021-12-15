@@ -1,25 +1,22 @@
-var camposReq = document.querySelectorAll('requisito');
+const toastLive = document.getElementById('toast-error');
+const formulario = document.getElementById('register-form')
 
-function validaFormulario(event) {
-  event.preventDefault()
-    let contador = 0
-    for(var i = 0; i < camposReq.length; i++) {
-        if (camposReq[i].value == '') {
-            contador += 1;
-        }
-    }
-    if (contador == 0 && validaUsuario() && validaSenha() && validaEmail() && validaConfSenha()) {
-        let toastLive = document.getElementById('toast-confimacao');
-        let toast = new bootstrap.Toast(toastLive);
-        toast.show();
-        limpaCampos();
-    } else {
-        let toastLive = document.getElementById('toast-erro');
-        let toast = new bootstrap.Toast(toastLive);
-        toast.show();
-    }
+formulario.addEventListener('btn-submit', validaFormulario)
+
+function showToast (mensagem) {
+  let toast = new bootstrap.Toast(toastLive);
+  const toastBody = document.getElementById('toast-body')
+  toastBody.innerText = mensagem
+  toast.show();
 }
 
+function validaFormulario(event) {
+  event.preventDefault()   
+    if ( validaUsuario() && validaEmail() && validaSenha() && validaConfSenha()) {
+        formulario.reset();
+        document.getElementById('link').click();
+    } 
+}
 
 function validaUsuario() {
     const nome = document.getElementById('name').value;
@@ -45,20 +42,17 @@ function validaEmail() {
       
   } else {
     let toastLive = document.getElementById('email-erro');
-      let toast = new bootstrap.Toast(toastLive);
-      toast.show();
-      return false
-
+    let toast = new bootstrap.Toast(toastLive);
+    toast.show();
     return false;
   }
 }
 
-
 function validaSenha() {
-  const senha = document.getElementById('password').value;
+  const senha =new FormData(formulario);
   const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
   const reSpaces = /^\S*$/;
-  if (re.test(senha.value) && reSpaces.test(senha.value)) {
+  if (re.test(senha.get('password')) && reSpaces.test(senha.get('password'))) {
     return true;
   } else {
     let toastLive = document.getElementById('senha-erro');
@@ -69,24 +63,15 @@ function validaSenha() {
 }
 
 function validaConfSenha() {
-  const senha = document.getElementById('confirPassword').value;
-  const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
-  const reSpaces = /^\S*$/;
-  if (re.test(senha.value) && reSpaces.test(senha.value)) {
-    return true;
-  } else {
-    let toastLive = document.getElementById('confirSenha-erro');
-    let toast = new bootstrap.Toast(toastLive);
-    toast.show();
-    return false;
-  }
-}
-
-var campos = document.querySelectorAll('requisito');
-
-function limpaCampos() { 
-    for(var i = 0; i < campos.length; i++) {
-        campos[i].value = ''
+  const senha = document.getElementById('password').value;
+  const senha2 = document.getElementById('confirPassword').value;
+    if (senha == senha2) {
+      return true;
+    } else {
+      let toastLive = document.getElementById('confirSenha-erro');
+      let toast = new bootstrap.Toast(toastLive);
+      toast.show();
+      return false;
     }
 }
 
