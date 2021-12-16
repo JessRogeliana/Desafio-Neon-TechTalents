@@ -35,10 +35,10 @@ module.exports = {
                 senha: req.body.senha
               });
               res.status(201).json({
-                message: "Lançamento feito Com Sucesso!",
+                message: "Cliente creado com sucesso!",
                 status: 201,
                 statusText: "Created",
-                message: "Lançamento feito Com Sucesso!",
+                message: "Cliente creado com sucesso!",
                 data: cliente,
               });
             } else {
