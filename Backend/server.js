@@ -1,7 +1,7 @@
 const express = require('express'); //importacao do pacote
 const app = express(); //instanciando express
 const {connection} = require('./app/database/db');
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 
 // Middleware   
