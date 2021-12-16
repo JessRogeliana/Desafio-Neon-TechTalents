@@ -35,17 +35,28 @@
                 <p>Usuário</p>
                 <input type="text" name="name" id="name" placeholder="Insira seu nome de usuário">
                 <p class="mt-4">Senha</p>
-                <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                <input type="password" name="password" id="password" placeholder="Digite uma senha de 6 dígitos">
+
+                <div class="btn btn-acao">
+                    <input id="btn-submit" type="submit" value="Login">
+                    <a id= "link-saldo" href="saldo/saldo_index.html"></a>
+                </div>
+
+                <!--
                 <a id="btn-submit" id="link-saldo" class="botao-formulario" href="saldo/saldo_index.html">Login </a>
+                -->
+                
                 <a class="btn btn-acao" href="cadastro/index.html">Sem conta? Vem de cadastro 0/ </a>
             </form>
 
-            <div class="toast align-items-center text-white bg-primary border-0"
-                style="position: absolute; top: 30%; right: 35%" role="alert" aria-live="assertive"
-                aria-atomic="true" id="toast-confimacao">
+            <!-- Toasts -->
+
+            <div class="toast align-items-center top-center text-white bg-danger border-0"
+                style="position: absolute; top: 58%; right: 37%" role="alert" aria-live="assertive"
+                aria-atomic="false" id="toast-error-usuario">
                 <div class="d-flex">
-                    <div class="toast-body">
-                        Login realizado com sucesso!
+                    <div class="toast-body" id="toast-body-usuario">
+                        
                     </div>
                     <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
                         aria-label="Close"></button>
@@ -53,16 +64,18 @@
             </div>
 
             <div class="toast align-items-center top-center text-white bg-danger border-0"
-                style="position: absolute; top: 40%; right: 35%" role="alert" aria-live="assertive"
-                aria-atomic="false" id="toast-error">
+                style="position: absolute; top: 65%; right: 37%" role="alert" aria-live="assertive"
+                aria-atomic="false" id="toast-error-senha">
                 <div class="d-flex">
-                    <div class="toast-body" id="toast-body">
+                    <div class="toast-body" id="toast-body-senha">
                         
                     </div>
                     <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
                         aria-label="Close"></button>
                 </div>
             </div>
+
+            <!-- Toasts fim -->
 
         </div>
 
