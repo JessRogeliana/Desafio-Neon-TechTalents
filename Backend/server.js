@@ -1,7 +1,7 @@
 const express = require('express'); //importacao do pacote
 const app = express(); //instanciando express
 const {connection} = require('./app/database/db');
-const PORT = 9120;
+const PORT = process.env.PORT || 8000;
 
 
 // Middleware   
@@ -15,7 +15,6 @@ app.use(require('./routes/routerLancamento'))
 
 
 
-app.use(require('./routes/routerCliente'));
 app.listen(PORT, function () {
   console.log(`successfully initialized http://localhost:${PORT}`);
 
