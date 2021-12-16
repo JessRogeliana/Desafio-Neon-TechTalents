@@ -52,14 +52,14 @@
             </section>
 
 
-            <table class="table table-borderless">
+            <table id="tabela" class="table table-borderless">
                 <thead>
                     <tr>
-                        <th class="table-coluna" class="item-titulo" scope="col">Ítem</th>
-                        <th class="table-coluna" class="data-titulo" scope="col">Data</th>
-                        <th class="table-coluna" class="tipo-titulo" scope="col">Tipo</th>
-                        <th class="table-coluna" class="valor-titulo" scope="col">Valor</th>
-                        <th class="table-coluna" class="acoes-titulo" scope="col">Ações</th>
+                        <th class="table-coluna" id="item-titulo" scope="col">Ítem</th>
+                        <th class="table-coluna" id="data-titulo" scope="col">Data</th>
+                        <th class="table-coluna" id="tipo-titulo" scope="col">Tipo</th>
+                        <th class="table-coluna" id="valor-titulo" scope="col">Valor</th>
+                        <th class="table-coluna" id="acoes-titulo" scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -84,9 +84,11 @@
                         <td class="tipo">Saída</td>
                         <td class="valor false">R$ 60,50</td>
                         <td>
-                            <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                            </svg>
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>                                
+                                </svg>
+                            </button>
                             <svg class="icon-excluir" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -179,12 +181,61 @@
             Imprensa: imprensa@neon.com.br
             </p>  
         </div>
-        </footer>
+    </footer>
+
+
+    <!-- Modal Edição Formulario -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"> Editar </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="needs-validation" novalidate>
+                <div class="control-label form-group payment-form">                       
+                    <label for="validationCustom01" class="form-label">Ítem</label>                                    
+                        <input maxlength="50" equired type="text" class="form-control" id="description" name="description" required>
+                    </div>
+                     
+                    <div class="form-group">
+                        <label for="validationCustom02" class="form-label">Valor</label>
+                        <input class="form-control" id="amount" name="amount" required step='0.01' value='0,00' placeholder='0,00' min="0,00" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        type = "number" maxlength = "12" required>
+                    </div>
+                                   
+                    <div class="form-group control-label">
+                        <label for="validationCustom03" class="form-label">Entrou ou saiu?</label>
+                        <select class="form-control" id="status" name="status" required>
+                            <option>Entrou</option>
+                            <option>Saiu</option>
+                        </select>
+                    </div>                              
+                                
+                    <div class="form-group control-label">
+                        <label for="validationCustom04" class="form-label">Data</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>                      
+                </div>
+
+            </div>
+            <div class="modal-footer form-group">
+              <button type="button" class="btn-closeFooter" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit"  id=btn-submit class="btn-saveChanges btn-default preview-add-button"><span class="glyphicon glyphicon-plus"></span>Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="meusLançamentos.js"></script>
+    <script src="meusLancamentos.js"></script>
 
 </body>
 </html>
+
+
 
