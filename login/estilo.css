@@ -166,6 +166,8 @@ span {
     border: none;
     line-height: 3rem;
     margin-top: 4%;
+    text-align: center;
+    text-decoration: none;
 }
 
 .botao-formulario:hover {
@@ -177,7 +179,6 @@ span {
     text-decoration: none;
     color: #000;
 }
-
 
 /*NEON MENSAGEM*/
 
@@ -192,7 +193,6 @@ span {
     justify-self: center;
     margin: auto;
 }
-
 
 /*FOOTER*/
 
