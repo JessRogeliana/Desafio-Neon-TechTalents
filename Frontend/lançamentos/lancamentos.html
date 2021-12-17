@@ -16,10 +16,9 @@
 </head>
 
 <body>
-
     <header>
         <button  type="submit" class="Login-boato">
-            <a href="../login/index.html">                 
+            <a href="../meus lancamentos - Extrato/meusLancamentos.html">                 
                 <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="2.5rem" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
                 </svg>
@@ -32,47 +31,47 @@
 
     <main>
         <div class="container"> 
-            <form class="needs-validation" novalidate>          
-            <div class="row justify-content-center">                    
-                <img class="usuario-img" src="../img/det.png" alt="moeda de ouro">                       
-                    <h1>Deposite sua grana!</h1>
-            </div>
+            <form id="register-form" class="needs-validation" novalidate>          
+                <div class="row justify-content-center">                    
+                    <img class="usuario-img" src="../img/det.png" alt="moeda de ouro">                       
+                        <h1>Deposite sua grana!</h1>
+                </div>
 
-            
-            <div class="control-label form-group payment-form">                       
-                <label for="validationCustom01" class="form-label">Descrição</label>                                    
-                    <input maxlength="50" equired type="text" class="form-control" id="description" name="description" required>
-                </div>
-                 
-                <div class="form-group">
-                    <label for="validationCustom02" class="form-label">Valor</label>
-                    <input class="form-control" id="amount" name="amount" required step='0.01' value='0,00' placeholder='0,00' min="0,00" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"type = "number" maxlength = "12" required>
-                </div>
-                               
-                <div class="form-group control-label">
-                    <label for="validationCustom03" class="form-label">Entrou ou saiu?</label>
-                    <select class="form-control" id="status" name="status" required>
-                        <option>Entrou</option>
-                        <option>Saiu</option>
-                    </select>
-                </div>                              
-                            
-                <div class="form-group control-label">
-                    <label for="validationCustom04" class="form-label">Dia</label>
-                    <input type="date" class="form-control" id="date" name="date" required>
-                </div>
-                                  
-                <div class="form-group">
-                    <button type="submit" id='btn-submit' class="btn btn-default preview-add-button">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <a id="link-meusLancamentos" href="../meus lancamentos - Extrato/meusLancamentos.html">Enviar</a>
-                    </button>
-                </div>
                 
-            </div>
+                <div class="control-label form-group payment-form">                       
+                    <label for="validationCustom01" class="form-label">Descrição</label>                                    
+                        <input maxlength="50" equired type="text" class="form-control" id="description" name="description" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="validationCustom02" class="form-label">Valor</label>
+                        <input class="form-control" id="amount" name="amount" required step='0.01' value='0.00' placeholder='0,00' min="0.00" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"type = "number" maxlength = "12" required>
+                    </div>
+                                
+                    <div class="form-group control-label">
+                        <label for="validationCustom03" class="form-label">Entrou ou saiu?</label>
+                        <select class="form-control" id="status" name="status" required>
+                            <option>Entrou</option>
+                            <option>Saiu</option>
+                        </select>
+                    </div>                              
+                                
+                    <div class="form-group control-label">
+                        <label for="validationCustom04" class="form-label">Dia</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                                    
+                    <div class="form-group">
+                        <button type="submit" id='btn-submit' class="btn btn-default preview-add-button">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <a id="link-meusLancamentos" href="../meus lancamentos - Extrato/meusLancamentos.html">Enviar</a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </form>
         </div>
-    </form>
-
+        
     </main>
 
     <footer>
@@ -108,7 +107,7 @@
     </footer>
 
 
-    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 40%; right: 35%" role="alert" aria-live="assertive"
+    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 80%; right: 40%" role="alert" aria-live="assertive"
     aria-atomic="false" id="toast-error">
         <div class="d-flex">
             <div class="toast-body" id="toast-body">
@@ -119,7 +118,7 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="lançamentos.js"></script>
+    <script src="lancamentos.js"></script>
     
 </body>
 </html>

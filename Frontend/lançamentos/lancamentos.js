@@ -1,8 +1,8 @@
 const toastLive = document.getElementById('toast-error');
 const formulario = document.getElementById('register-form');
-var descricao = document.getElementById("description").value;
-var valor = document.getElementById("amount").value;
-var data = document.getElementById("date").value; 
+var descricao = document.getElementById("description");
+var valor = document.getElementById("amount");
+var data = document.getElementById("date"); 
 
 formulario.addEventListener('btn-submit', validaFormulario);
 
@@ -19,9 +19,9 @@ function showToast (mensagem) {
 function validaFormulario(event) {
 
   event.preventDefault()   
-    if (descricao && valor && data) {
+    if (  (descricao.value.length > 1) && (valor.value.length > 1) && (data.value.length > 1) ) {
         formulario.reset();
-        document.getElementById('link-meusLancamentos').click()
+        document.getElementById('link-meusLancamentos').click();
     } else {
       showToast('Verifique novamente os campos preenchidos')
     }

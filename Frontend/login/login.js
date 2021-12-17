@@ -32,12 +32,14 @@ function validaFormulario(event) {
 
 
 function validaUsuario() {
-  const formData = new FormData(formulario)
+  const usuario = document.getElementById('name');
+  const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
+  const ree = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}\.([a-zA-Z]){2,5}$/;
+  const reSpaces = /^\S*$/;
     
-    if (formData.get('name').length > 3 && formData.get('name').length < 16) {
-      return true
-    } else {
-      
+  if (reSpaces.test(usuario.value) && (re.test(usuario.value) || ree.test(usuario.value))) {
+    return true;
+    } else {  
       showToastUsuario('O nome de usuario precisa de 3 a 16 caracteres')
       return false
     }
