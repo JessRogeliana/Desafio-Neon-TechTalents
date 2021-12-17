@@ -159,8 +159,8 @@ tr {
     font-size: 1.5rem;
 }
 
-td svg {
-    margin-right: 1rem;
+td .icon-excluir {
+    margin-left: 0.5rem;
 }
 
 td svg:hover {
@@ -234,6 +234,63 @@ footer a {
     text-decoration: none
 }
 
+
+/*MODAL FORMULARIO*/
+
+.btn {
+    margin: 0;
+    border: 0;
+    margin-right: 3rem;
+    width: 1px;
+    padding: 0;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background-color: white;
+}
+
+.modal {
+    padding-top: 5%;
+}
+
+.btn-close:hover {
+    background-color: rgba(64, 224, 208, 0.329);
+    color: black;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal label {
+    font-size: 1.3rem;
+    margin: 1rem;
+    width: 90%;
+    font-weight: bold;
+}
+
+.modal input, .modal select{
+    font-size: 1rem;
+    margin: 0 1rem 1rem 1rem;
+    width: 90%;
+}
+
+.modal-footer {
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-top: 0;
+    border-radius: 0 0 .3rem .3rem;
+    outline: 0;
+}
+
+.btn-closeFooter, .btn-saveChanges {
+    background-color: turquoise;
+    font-size: 1rem;
+}
 
 
 /*MOBILE*/

@@ -154,7 +154,7 @@ span {
     color: var(--dark-text);
 }
 
-.botao-formulario {
+.btn-submit {
     width: 100%;
     margin: 0;
     height: 4rem;
@@ -166,18 +166,25 @@ span {
     border: none;
     line-height: 3rem;
     margin-top: 4%;
+    text-align: center;
+    text-decoration: none;
 }
 
-.botao-formulario:hover {
+.btn-submit:hover {
     background: #dbad05;
     color: #000;
 }
 
-.botao-formulario a:hover {
+#btn-submit {
+    font-weight: bold;
     text-decoration: none;
-    color: #000;
+    border: 0;
 }
 
+#btn-submit:hover {
+    background: #dbad05;
+    color: #000;
+}
 
 /*NEON MENSAGEM*/
 
@@ -192,7 +199,6 @@ span {
     justify-self: center;
     margin: auto;
 }
-
 
 /*FOOTER*/
 

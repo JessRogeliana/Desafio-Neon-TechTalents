@@ -10,10 +10,10 @@ body {
 
 header {
 display: flex;
- justify-content: space-between;
+justify-content: space-between;
 align-items: baseline;
 box-sizing: border-box;
-background-color: #F1F4F4;
+background-color: white;
 }
 
 .logo-h1 {

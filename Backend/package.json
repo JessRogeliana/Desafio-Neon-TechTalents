@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend Desafio final Neon",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "Virginia Zapata",
   "license": "ISC",
