@@ -50,7 +50,7 @@ function validaEmail() {
 
 function validaSenha() {
   const senha =new FormData(formulario);
-  const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
+  const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,16})(?=.*[!@#$%^&*])/;
   const reSpaces = /^\S*$/;
   if (re.test(senha.get('password')) && reSpaces.test(senha.get('password'))) {
     return true;
