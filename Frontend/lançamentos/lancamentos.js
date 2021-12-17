@@ -19,9 +19,9 @@ function showToast (mensagem) {
 function validaFormulario(event) {
 
   event.preventDefault()   
-    if (  (descricao.value.length > 1) && (valor.value.length > 1) && (data.value.length > 1) ) {
+    if (  (descricao.value.length >= 1) && (valor.value.length >= 1) && (data.value.length >= 1) ) {
         formulario.reset();
-        document.getElementById('link-meusLancamentos').click();
+        document.getElementById('link-meusLancamentos').click();   
     } else {
       showToast('Verifique novamente os campos preenchidos')
     }
