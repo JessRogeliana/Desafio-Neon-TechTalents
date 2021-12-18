@@ -37,10 +37,10 @@ const criandoCliente = await cliente.create({
     senha: req.body.senha
 });
 res.status(201).json({
-  message: "Cliente creado com sucesso!",
+  message: "Cliente criado com sucesso!",
   status: 201,
   statusText: "Created",
-  message: "Cliente creado com sucesso!",
+  message: "Cliente criado com sucesso!",
   data: cliente,
 });
 } 

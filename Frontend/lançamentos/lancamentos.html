@@ -31,7 +31,7 @@
 
     <main>
         <div class="container"> 
-            <form id="register-form" class="needs-validation">          
+            <form id="register-form">          
                 <div class="row justify-content-center">                    
                     <img class="usuario-img" src="../img/det.png" alt="moeda de ouro">                       
                         <h1>Deposite sua grana!</h1>
@@ -39,36 +39,42 @@
 
                 
                 <div class="control-label form-group payment-form">                       
-                    <label for="validationCustom01" class="form-label">Descrição</label>                                    
-                        <input maxlength="50" equired type="text" class="form-control" id="description" name="description" required>
-                    </div>
+                    <label class="form-label">Descrição</label>                                    
+                    <input  type="text" class="form-control" id="description" name="description" >
+                </div>
                     
-                    <div class="form-group">
-                        <label for="validationCustom02" class="form-label">Valor</label>
-                        <input class="form-control" id="amount" name="amount" required step='0.01' value='0.00' placeholder='0,00' min="0.00" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"type = "number" maxlength = "12" required>
-                    </div>
+                <div class="form-group">
+                    <label  class="form-label">Valor</label>
+                    <input class="form-control" id="amount" name="amount"  required step='0,01' value='0,00' placeholder='0,00'  type = "number">
+                </div>
+                                
+                 <div class="form-group control-label">
+                     <label  class="form-label">Entrou ou saiu?</label>
+                     <select class="form-control" id="status" name="status">
+                         <option>Entrou</option>
+                         <option>Saiu</option>
+                     </select>
+                 </div>                              
                                 
                     <div class="form-group control-label">
-                        <label for="validationCustom03" class="form-label">Entrou ou saiu?</label>
-                        <select class="form-control" id="status" name="status">
-                            <option>Entrou</option>
-                            <option>Saiu</option>
-                        </select>
-                    </div>                              
-                                
-                    <div class="form-group control-label">
-                        <label for="validationCustom04" class="form-label">Dia</label>
-                        <input type="date" class="form-control" id="date" name="date" required>
+                        <label  class="form-label">Dia</label>
+                        <input type="date" class="form-control" id="date" name="date" >
                     </div>
                                     
                     <div class="form-group">
-                        <button type="submit" id='btn-submit' class="btn btn-default preview-add-button">
-                            <span class="glyphicon glyphicon-plus"></span>
-                            <a id="link-meusLancamentos" href="../meus lancamentos - Extrato/meusLancamentos.html">Enviar</a>
-                        </button>
+                        <button type="submit" id='btn-submit' >Enviar</button>
+                            <a id="link-meusLancamentos" href="../meus lancamentos - Extrato/meusLancamentos.html"></a>
+                    </div>
+
+                    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 80%; right: 40%" role="alert" aria-live="assertive"
+                    aria-atomic="false" id="toast-error">
+                     <div class="d-flex">
+                        <div class="toast-body" id="toast-body">        
+                    </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"aria-label="Close"></button>
+                    </div>
                     </div>
                     
-                </div>
             </form>
         </div>
         
@@ -105,17 +111,6 @@
             </p>  
         </div>
     </footer>
-
-
-    <div class="toast align-items-center top-center text-white bg-danger border-0" style="position: absolute; top: 80%; right: 40%" role="alert" aria-live="assertive"
-    aria-atomic="false" id="toast-error">
-        <div class="d-flex">
-            <div class="toast-body" id="toast-body">
-                
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"aria-label="Close"></button>
-        </div>
-    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="lancamentos.js"></script>

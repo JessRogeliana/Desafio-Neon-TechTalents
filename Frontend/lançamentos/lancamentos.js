@@ -1,31 +1,62 @@
 const toastLive = document.getElementById('toast-error');
 const formulario = document.getElementById('register-form');
-var descricao = document.getElementById("description");
-var valor = document.getElementById("amount");
-var data = document.getElementById("date"); 
+const descricao = document.getElementById("description");
+const valor = document.getElementById("amount");
+const data = document.getElementById("date"); 
 
 formulario.addEventListener('btn-submit', validaFormulario);
 
 
-/* Toast*/ 
+function validaDescricao() {
+	 "use strict";
+  if ((descricao.toString().length > 3) ){
+    return true;
+  } else {
+    showToast('Utilize mais caracteres!');
+    return false;
+  } 
+}
+
+function validaValor() {
+	"use strict";
+  if ((valor.toString().length > 0)) {
+    return true;
+  } else {
+    showToast('O valor tem que ser maior que zero!');
+    return false;
+  }
+} 
+
+function validaData() {
+	"use strict";
+if (isNaN(data) === true){
+  return true;
+} else {
+  showToast('Você só pode inserir números aqui!');
+  return false;
+}
+}
+
+function validaFormulario(event) {
+"use strict";
+event.preventDefault();
+	
+  if (validaDescricao() && validaData() && validaValor()) {
+      formulario.reset();
+      document.getElementById('link-meusLancamentos').click();
+  } 
+}
+/* Toast */
 function showToast (mensagem) {
+	"use strict";
   let toast = new bootstrap.Toast(toastLive);
-  const toastBody = document.getElementById('toast-body')
-  toastBody.innerText = mensagem
+  const toastBody = document.getElementById('toast-body');
+  toastBody.innerText = mensagem;
   toast.show();
 }
 
-/* Validar Formulario*/ 
-function validaFormulario(event) {
-
-  event.preventDefault()   
-    if (  (descricao.value.length >= 1) && (valor.value.length >= 1) && (data.value.length >= 1) ) {
-        formulario.reset();
-        document.getElementById('link-meusLancamentos').click();   
-    } else {
-      showToast('Verifique novamente os campos preenchidos')
-    }
-}
-
 /*Chamadas*/
-document.getElementById('btn-submit').addEventListener('click', validaFormulario);
+document.getElementById("btn-submit").addEventListener('click', validaFormulario);
+document.getElementById("description").addEventListener('focusout', validaDescricao);
+document.getElementById("amount").addEventListener('focusout', validaValor);
+document.getElementById("date").addEventListener('focusout', validaData);
