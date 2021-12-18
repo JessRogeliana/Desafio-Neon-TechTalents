@@ -40,6 +40,8 @@ Página que além de exibir um histórico dos lançamentos realizados, também p
 - Bootstrap
 
 ### Backend 
--
--
--
+- NodeJs
+- MySQL
+
+### Tabelas do Banco de Dados
+![bd](https://github.com/JessRogeliana/Desafio-Neon-TechTalents/blob/main/Assets/Dependencias.png)
