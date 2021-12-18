@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   lancamento.init({
-    valor: DataTypes.STRING,
+    valor: DataTypes.FLOAT,
     descripcao: DataTypes.STRING,
     saldo: DataTypes.STRING,
     tipo: DataTypes.STRING,
