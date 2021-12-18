@@ -7,7 +7,7 @@ module.exports = {
     try {
       const lancamentoCliente = await cliente.findByPk(req.params.id, {
         include: {
-          association: "Value",
+          association: "Saldos",
           attributes: ["id", "valor", "data", "descripcao"],
         },
       });
@@ -19,8 +19,8 @@ module.exports = {
       } else {
         res.status(400).send(400);
       }
-    } catch (error) {
-      res.status(400).send(400);
+      } catch (error) {
+       res.status(400).send(400);
     }
   },
   async criandoLancamento(req, res) {
@@ -135,8 +135,7 @@ module.exports = {
         (atualizacaoLancamento && req.body.valor,
         req.body.data,
         req.body.descripcao,
-        req.body.tipo,
-        req.body.id_cliente)
+        req.body.tipo)
       ) {
         await atualizacaoLancamento.update(req.body);
         return res.json({
