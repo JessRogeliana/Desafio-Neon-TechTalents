@@ -1,80 +1,8 @@
-/* CRIAR LANÇAMENTOS TABELA (a partir de info cadastrada na página de Honer - Fazer chamada pela API) */
-
-function insereTabela(id, item, data, tipo, valor, acoes) {
-
-    var lancamentos = document.getElementById("tabela");
-    var qtdLinhas = lancamentos.rows.length;
-    var linha = lancamentos.insert(qtdLinhas);
-
-    var cellId = linha.insertCell(0);
-    var cellItem = linha.insertCell(1);
-    var cellData = linha.insertCell(2);
-    var cellTipo = linha.insertCell(3);
-    var cellValor = linha.insertCell(4);
-    var cellAcoes = linha.insertCell(5);
-
-    cellId.innerHTML = id;
-    cellItem.innerHTML = item;
-    cellData.innerHTML = data;
-    cellTipo.innerHTML = tipo;
-    cellValor.innerHTML = valor;
-    cellAcoes.innerHTML = acoes;
-
-    preencheCamposForm()
-}
-
-document.querySelector("botao-novo-lancamento").addEventListener('onClick', insereTabela(parametros chamar pela API));
-
-/* CHAMADA DA API (?) */ 
-
-
-
-
-
-
-/* EDITAR E EXCLUIR DADOS TABELA */
-
-var lancamentos, index;
-var botaoAcoes = document.querySelector('btn')
-
-function alteraTabela(item, data, tipo, valor) {
-    lancamentos.rows[index].cells[1].innerHTML = item;
-    lancamentos.rows[index].cells[2].innerHTML = data;
-    lancamentos.rows[index].cells[3].innerHTML = tipo;
-    lancamentos.rows[index].cells[4].innerHTML = valor;
-}
-
-function preencheCamposForm() {
-    for(var i=0; i < lancamentos.rows.length; i ++) {
-
-        lancamentos.rows[i].botaoAcoes.onclick = function() {
-            index = this.rowIndex;
-            document.getElementById("description").value = lancamentos.rows[index].cells[1].innerText;
-            document.getElementById("date").value = lancamentos.rows[index].cells[2].innerText;
-            document.getElementById("status").value = lancamentos.rows[index].cells[3].innerText;
-            document.getElementById("amount").value = lancamentos.rows[index].cells[4].innerText;
-        }
-    }
-}
-
-function excluiLancamento() {
-    for(var i = 0; i< pessoas.rows.length; i++) {
-        if ( index == i) {
-            lancamentos.deleteRow(index);
-            return 
-        }
-    }
-
-}
-
-
-
-/* ----------  OUTRA OPÇÃO --------------- */
+/* CRIAR LANÇAMENTOS TABELA */
 
 var tabela = document.getElementById('tabela-lancamento')
 
 function extraiInfoApi() {
-
     var lancamento = {
         id: id,
         item: item,
@@ -82,7 +10,6 @@ function extraiInfoApi() {
         tipo: tipo,
         valor: valor
     }
-
     return lancamento
 }
 
@@ -90,10 +17,8 @@ function montaTd(dado, classe) {
     var td = document.createElement("td");
     td.textContent = dado;
     td.classList.add(classe);
-
     return td
 }
-
 
 function montaTr(lancamento) {
     var lancamentoTR = document.createElement("tr");
@@ -122,9 +47,7 @@ function montaTr(lancamento) {
     return lancamentoTR
 }
 
-
 function adicionaTabela(id, item, data, tipo, valor) {
-
     var lancamento = extraiInfoApi();
     var lancamentoTR = montaTr(lancamento);
 
@@ -132,8 +55,8 @@ function adicionaTabela(id, item, data, tipo, valor) {
 }
 
 
-/* CRIAR TD AÇÕES */
 
+/* CRIAR TD AÇÕES */
 function preencheTdAcoes() {
     var botaoTdAcoes = document.createElement('button');
     var svgTdAcoesEditar = document.createElement('svg');
@@ -160,42 +83,87 @@ function preencheTdAcoes() {
 
 
 
-/*
-var botaoEditar = document.querySelector("icone-editar");
-botaoEditar.addEventListener('click', alteraTabela())
 
-function alteraTabela() {
+/* EDITAR E EXCLUIR DADOS TABELA */
+var lancamentos, index;
+var botaoAcoes = document.querySelector('btn')
+
+function alteraTabela(item, data, tipo, valor) {
+    lancamentos.rows[index].cells[1].innerHTML = item;
+    lancamentos.rows[index].cells[2].innerHTML = data;
+    lancamentos.rows[index].cells[3].innerHTML = tipo;
+    lancamentos.rows[index].cells[4].innerHTML = valor;
+}
+
+function preencheCamposForm() {
+    for(var i=0; i < lancamentos.rows.length; i ++) {
+
+        lancamentos.rows[i].botaoAcoes.onclick = function() {
+            index = this.rowIndex;
+            document.getElementById("description").value = lancamentos.rows[index].cells[1].innerText;
+            document.getElementById("date").value = lancamentos.rows[index].cells[2].innerText;
+            document.getElementById("status").value = lancamentos.rows[index].cells[3].innerText;
+            document.getElementById("amount").value = lancamentos.rows[index].cells[4].innerText;
+        }
+    }
+}
+/*
+function excluiLancamento() {
+    for(var i = 0; i< pessoas.rows.length; i++) {
+        if ( index == i) {
+            lancamentos.deleteRow(index);
+            return 
+        }
+    }
 }
 */
 
-
+var listaLancamentos = document.querySelectorAll('lancamento');
+listaLancamentos.forEach(function(lancamento) {
+    lancamento.addEventListener('click',function() {
+        console.log('fui clicado');
+        this.remove();
+        //target.parentNode.remove()
+    })
+});
 
 
 
 
 /* FILTRO */ 
-
-var filtroDataInicial = document.getElementById('data-inicio');
-var filtroDataFinal = document.getElementById('data-final');
-var listaDatas = document.querySelectorAll('data')
+var filtroDataInicial = document.getElementById('data-inicio').value;
+var filtroDataFinal = document.getElementById('data-final').value;
+var listaDatas = document.querySelectorAll('data');
 
 function filtroData() {
     let datasFiltradas = listaDatas.filter(result => {
-        return result.data >= dataInicial && result.data <= dataFinal;
+        var retorno = result.data >= filtroDataInicial && result.data <= filtroDataFinal;
     })   
     console.log(datasFiltradas)
-}
 
-function converteDataBr(dataAmericana) {
-    return dataAmericana.split('-').reverse().join('-');
+    for(var i= 0; i < listaDatas.length; i++) {
+        if (    listaDatas[i].value.filter(item => !retorno.includes(item))    ) {
+            listaDatas[i].patentNode.classList.add('hide')
+        } else {
+            listaDatas[i].patentNode.classList.remove('hide')
+        }
+    }
 }
+/* includes/some */
 /* falta descobrir como mostrar apenas os elementos filtrados na tela. Preciso inserir valores para testar */
 
 
 
 
-/* SALDO CONTA */
+/* CONVERTE DATA USA EM BR */
+function converteDataBr(dataAmericana) {
+    return dataAmericana.split('-').reverse().join('-');
+}
 
+
+
+
+/* SALDO CONTA */
 var listaValores = document.querySelectorAll('valor')
 var saldo = document.querySelector('saldo-principal')
 
@@ -210,8 +178,49 @@ function somaCamposValor() {
 
 
 
+/* CHAMADAS */
 
 
+
+
+
+
+
+
+
+
+/* ----------  OUTRA OPÇÃO --------------- */
+
+/* CRIAR LANÇAMENTOS TABELA (a partir de info cadastrada na página de Honer - Fazer chamada pela API) */
+/*
+function insereTabela(id, item, data, tipo, valor, acoes) {
+
+    var lancamentos = document.getElementById("tabela");
+    var qtdLinhas = lancamentos.rows.length;
+    var linha = lancamentos.insert(qtdLinhas);
+
+    var cellId = linha.insertCell(0);
+    var cellItem = linha.insertCell(1);
+    var cellData = linha.insertCell(2);
+    var cellTipo = linha.insertCell(3);
+    var cellValor = linha.insertCell(4);
+    var cellAcoes = linha.insertCell(5);
+
+    cellId.innerHTML = id;
+    cellItem.innerHTML = item;
+    cellData.innerHTML = data;
+    cellTipo.innerHTML = tipo;
+    cellValor.innerHTML = valor;
+    cellAcoes.innerHTML = acoes;
+
+    preencheCamposForm()
+}
+
+document.querySelector("botao-novo-lancamento").addEventListener('onClick', insereTabela(parametros chamar pela API));
+*/
+
+
+/* CHAMADA DA API (?) */ 
 
 
 
