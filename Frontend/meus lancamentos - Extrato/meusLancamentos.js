@@ -15,7 +15,11 @@ const listaExtrato = [{
 window.addEventListener('DOMContentLoaded', () =>  {
 
     /* chamada api */
-
+renderizarLista();
+    
+})
+function renderizarLista(){
+    
     let trList = '';
     for (let i = 0; i < listaExtrato.length; i++) {
         var linhaExtrato = listaExtrato[i]
@@ -43,48 +47,40 @@ window.addEventListener('DOMContentLoaded', () =>  {
     `
     }
     document.getElementById('tabelaLancamento').innerHTML = trList;
-    
-})
+}
 
 function abrirModal(index) {
     alteraCamposModal(listaExtrato[index]);
 }
 
-/* Pega valor da tabela e insere no form/modal */
+/* Alterando s dados do formulário*/
 function alteraCamposModal(linhaExtrato) {
-    document.getElementById('item').value = linhaExtrato.item
-    document.getElementById('data').value = linhaExtrato.data
-    document.getElementById('tipo').value = linhaExtrato.tipo
-    document.getElementById('valor').value = linhaExtrato.valor
+    document.getElementById('editarId').value = linhaExtrato.id;
+    document.getElementById('item').value = linhaExtrato.item;
+    document.getElementById('data').value = linhaExtrato.data;
+    document.getElementById('tipo').value = linhaExtrato.tipo;
+    document.getElementById('valor').value = linhaExtrato.valor;
 }
 
 /*event -> salvar -> trocar dados para tabela -> usar elementos por id */
 
 /* Pega valor inserido/atual do form/modal */
 function submeterFormulario() {
-    const item = document.getElementById('item').value 
-    const data = document.getElementById('data').value
-    const tipo = document.getElementById('tipo').value
-    const valor = document.getElementById('valor').value
-
-    listaExtrato[index][1] = item.value;
-    listaExtrato[index][2] = data.value;
-    listaExtrato[index][3] = tipo.value;
-    listaExtrato[index][4] = valor.value; 
+    const id = document.getElementById('editarId').value;
+    const item = document.getElementById('item').value; 
+    const data = document.getElementById('data').value;
+    const tipo = document.getElementById('tipo').value;
+    const valor = document.getElementById('valor').value;
+    //Busca o indice do array pelo id
+    const indice = listaExtrato.findIndex(linhaExtrato => linhaExtrato.id == id)
+    //Altera os valores no indice selecionado
+    listaExtrato[indice].item = item;
+    listaExtrato[indice].data = data;
+    listaExtrato[indice].tipo = tipo;
+    listaExtrato[indice].valor = valor; 
+    //Renderiza a lista
+    renderizarLista();
 }
-
-
-/* Substituir valor tabela pelo inserido no form */
-/*
-function alteraCamposModal(linhaExtrato) {
-    document.getElementById('submeterFormulario').addEventListener('click', function () {
-
-    })
-}
-alteraCamposModal(listaExtrato[index]);
-
-*/
-
 
 
 
