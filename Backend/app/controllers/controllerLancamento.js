@@ -8,7 +8,7 @@ module.exports = {
       const lancamentoCliente = await cliente.findByPk(req.params.id, {
         include: {
           association: "Saldos",
-          attributes: ["id", "valor", "data", "descripcao"],
+          attributes: ["id", "valor", "data", "descripcao", "tipo"],
         },
       });
       if (lancamentoCliente) {
