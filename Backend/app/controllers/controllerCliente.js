@@ -29,17 +29,17 @@ async criarCliente(req, res) {
   if (
     req.body.nome &&
     req.body.email &&
-    req.body.senha 
+    req.body.password 
   ) {
 const criandoCliente = await cliente.create({
     nome: req.body.nome,
     email: req.body.email,
-    senha: req.body.senha
+    senha: req.body.password
 });
 res.status(201).json({
   message: "Cliente criado com sucesso!",
   status: 201,
-  statusText: "Created",
+  statusText: "Criado",
   message: "Cliente criado com sucesso!",
   data: cliente,
 });
