@@ -4,8 +4,7 @@ const configLogin = require ('../../config/configLogin');
 require('dotenv').config();
 
 module.exports = {
-        
-    async login (req, res) {
+  async login(req, res) {
   
       let {email, password} = req.body;
   
@@ -43,7 +42,7 @@ module.exports = {
               try {
                 const hash = await bcrypt.hash(req.body.password, 10);
                 const Usuario = await cliente.create({
-                  name: req.body.name,
+                  nome: req.body.nome,
                   email:req.body.email,
                   password:  hash,
                 }).then(user =>{
