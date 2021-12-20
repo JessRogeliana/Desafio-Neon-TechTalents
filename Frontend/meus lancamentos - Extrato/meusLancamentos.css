@@ -12,8 +12,8 @@ body {
     display: none;
 }
 
-/*CABEÇALHO*/
 
+/*CABEÇALHO*/
 
 header {  
     display: flex;
@@ -60,7 +60,7 @@ button {
     border: none;
     height: 4rem;
     line-height: 3rem;
-    width: 12%;
+    width: 15%;
     margin-left: 3rem;
 }
 
@@ -76,7 +76,6 @@ button a:hover {
 
 
 /*MAIN*/
-
 
 main {
     display: flex;
@@ -129,10 +128,17 @@ main {
 input {
     font-size: 1rem;
     padding: 0.5rem;
+    margin-left: 1rem;
 }
 
 .filtro {
     padding: 1rem 0 1rem 0;
+}
+
+#filtro-data {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .container {
@@ -192,21 +198,12 @@ td svg:hover {
     height: 4rem;
 }
 
-/*
-.neon-mensagem {
-    width: 50%;
-    padding-top: 2rem;
+.botao-novo-lancamento a {
+    padding-top: 1rem;
 }
 
-.neon-mensagem img {
-    display: flex;
-    justify-self: center;
-    margin: auto;
-}
-*/
 
 /*FOOTER*/
-
 
 footer {
     background-color: #F1F4F4;
@@ -297,8 +294,8 @@ footer a {
 }
 
 
-/*MOBILE*/
 
+/*MOBILE*/
 
 @media (max-width: 1440px) {
     html {
@@ -313,11 +310,6 @@ footer a {
     .container {
         width: 60%;
     }
-    /*
-    .neon-mensagem {
-        width: 60%;
-    }
-    */
     .logo-h1 {
         width: 9%;
     }
@@ -336,11 +328,6 @@ footer a {
     .container {
         width: 63%;
     }
-    /*
-    .neon-mensagem {
-        width: 65%;
-    }
-    */
     .logo-h1 {
         width: 9.5%;
     }
@@ -359,11 +346,6 @@ footer a {
     .container {
         width: 80%;
     }
-    /*
-    .neon-mensagem {
-        width: 70%;
-    }
-    */
     .logo-h1 {
         width: 10%;
     }
@@ -389,11 +371,6 @@ footer a {
     .container {
         width: 85%;
     }
-    /*
-    .neon-mensagem {
-        width: 75%;
-    }
-    */
     
 }
 
@@ -413,11 +390,6 @@ footer a {
     main {
         padding: 8rem 4.5rem 8rem 4.5rem;
     }
-    /*
-    .neon-mensagem {
-        width: 75%;
-    }
-    */
 }
 
 @media (max-width: 485px) {
@@ -436,11 +408,6 @@ footer a {
     main {
         padding: 8rem 2rem 8rem 2rem;
     }
-    /*
-    .neon-mensagem {
-        width: 75%;
-    }
-    */
 }
 
 @media (max-width: 425px) {
@@ -456,11 +423,6 @@ footer a {
     header h1 {
         padding: 1rem;
     }
-    /*
-    .neon-mensagem {
-        width: 80%;
-    }
-    */
     main {
         padding: 8rem 0 8rem 0;
     }
@@ -483,11 +445,6 @@ footer a {
     header h1 {
         padding: 1.5rem;
     }
-    /*
-    .neon-mensagem {
-        width: 90%;
-    }
-    */
     html {
         font-size: 45%;
     }
@@ -507,11 +464,6 @@ footer a {
     header h1 {
         padding: 1.5rem;
     }
-    /*
-    .neon-mensagem {
-        width: 90%;
-    }
-    */
     html {
         font-size: 45%;
     }

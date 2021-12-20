@@ -42,13 +42,16 @@
             <section class="filtro">
                 <p>Filtrar por data </p>
 
-                <form name="filtro-data">
+                <form name="filtro-data" id="filtro-data">
                     <label for="data">De:</label>
                     <input type="date" id="data-inicio" name="data-inicio">
               
                     <label for="data">Até:</label>
                     <input type="date" id="data-final" name="data-final">
+
+                    <button id="consultaFiltroData">consultar</button>
                 </form>
+                
             </section>
 
 
@@ -70,7 +73,7 @@
             </table>
 
             <div class="novo-lancamento">
-                <div  type="submit" class="botao-novo-lancamento">
+                <button  type="submit" class="botao-novo-lancamento">
                     <a href="../lançamentos/lancamentos.html">                  
                         <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="2.5rem" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -78,7 +81,7 @@
                         </svg>
                         Novo Lançamento
                     </a>
-                </div> 
+                </button>
             </div>
 
         </div>

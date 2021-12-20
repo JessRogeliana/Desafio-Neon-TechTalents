@@ -31,7 +31,7 @@ Página de realização de novos lançamentos (pagamentos, recebimentos, etc).
 Página que além de exibir um histórico dos lançamentos realizados, também permite gerencia-los.
 ![web 5](https://github.com/JessRogeliana/Desafio-Neon-TechTalents/blob/main/Assets/meusLan%C3%A7amentos.PNG)
 
-## Tecnologia Usadas
+## Tecnologias Usadas
 
 ### Frontend
 - HTML;
@@ -40,7 +40,7 @@ Página que além de exibir um histórico dos lançamentos realizados, também p
 - Bootstrap
 
 ### Backend 
-- NodeJs
+- NodeJs (Dependencias de NodeJS: cors, dotenv, express, mysql2, sequelize, nodemon, sequelize-cli)
 - MySQL
 
 ### Tabelas do Banco de Dados

@@ -83,7 +83,8 @@ function alteraCamposModal(linhaExtrato) {
     listaExtrato[indice].valor = valor; 
     //Renderiza a lista
     renderizarLista();
-}*/
+    $('#exampleModal').modal('hide');
+}
 
 
 
@@ -119,7 +120,7 @@ function filtroData() {
     }
 }
 /* includes/some */
-/* falta descobrir como mostrar apenas os elementos filtrados na tela. Preciso inserir valores para testar */
+document.getElementById('consultaFiltroData').addEventListener('click', filtroData);
 
 
 
@@ -133,6 +134,7 @@ function converteDataBr(dataAmericana) {
 
 
 /* SALDO CONTA */
+/*
 var listaValores = document.querySelectorAll('valor')
 var saldo = document.querySelector('saldo-principal')
 
@@ -155,3 +157,4 @@ fetchLista()
 
 
 
+}
