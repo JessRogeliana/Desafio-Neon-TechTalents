@@ -1,23 +1,18 @@
-const listaExtrato = [{        
-    id: 1,
-    item: 'Água',
-    data: '2021-10-11',
-    tipo: 'entrou',
-    valor: 20.00
-}, {        
-    id: 2,
-    item: 'luz',
-    data: '2021-05-09',
-    tipo: 'saiu',
-    valor: 100.00
-} ]  
+const saldoPrincipal = document.getElementById('saldo-principal')
+let listaExtrato = [] 
 
-window.addEventListener('DOMContentLoaded', () =>  {
+async function fetchLista () {
+    const userInfo = JSON.parse(window.localStorage.getItem('userInfo'))
+   const data =  await fetch(`http://localhost:5000/cliente/${userInfo.user.id}/lancamento`)
+  .then(response => response.json())
 
-    /* chamada api */
-renderizarLista();
-    
-})
+  listaExtrato = data.data.Saldos
+  let saldoTotal = 0
+  listaExtrato.forEach(extrato => {
+      saldoTotal += Number(extrato.valor)
+  })  
+saldoPrincipal.innerText= `R$ ${saldoTotal}`
+
 function renderizarLista(){
     
     let trList = '';
@@ -25,15 +20,15 @@ function renderizarLista(){
         var linhaExtrato = listaExtrato[i]
         trList += 
         `
-        <tr id="lancamento" class="lancamento">
+        <tr id="lancament" class="lancamento">
 
             <td class="hide" class="id">${linhaExtrato.id}</td>
-            <td class="item" scope="row">${linhaExtrato.item}</td>
+            <td class="item" scope="row">${linhaExtrato.descripcao}</td>
             <td class="data">${linhaExtrato.data}</td>
             <td class="tipo">${linhaExtrato.tipo}</td>
             <td class="valor false">R$ ${linhaExtrato.valor}</td>
             <td class="acoes">
-                <button type="button" class="btn editingTRbutton" data-bs-toggle="modal" data-target="#editModal" data-bs-target="#exampleModal" onclick="abrirModal(${i})"> 
+                <button type="button" id="${linhaExtrato.id}" class="btn editingTRbutton" data-bs-toggle="modal" data-target="#editModal" data-bs-target="#exampleModal" > 
                     <svg class="icon-editar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                         <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>                                
                     </svg>
@@ -47,14 +42,22 @@ function renderizarLista(){
     `
     }
     document.getElementById('tabelaLancamento').innerHTML = trList;
+    document.querySelectorAll('editingTRbutton').forEach((btn, i) => {
+       btn.addEventListener('click', () => {
+        abrirModal(i)
+       })
+    })
 }
 
 function abrirModal(index) {
-    alteraCamposModal(listaExtrato[index]);
+    console.log(listaExtrato)
+    alert()
+    /*alteraCamposModal(listaExtrato[index]);*/
 }
 
 /* Alterando s dados do formulário*/
 function alteraCamposModal(linhaExtrato) {
+    console.log(linhaExtrato)
     document.getElementById('editarId').value = linhaExtrato.id;
     document.getElementById('item').value = linhaExtrato.item;
     document.getElementById('data').value = linhaExtrato.data;
@@ -65,7 +68,7 @@ function alteraCamposModal(linhaExtrato) {
 /*event -> salvar -> trocar dados para tabela -> usar elementos por id */
 
 /* Pega valor inserido/atual do form/modal */
-function submeterFormulario() {
+/*function submeterFormulario() {
     const id = document.getElementById('editarId').value;
     const item = document.getElementById('item').value; 
     const data = document.getElementById('data').value;
@@ -80,7 +83,7 @@ function submeterFormulario() {
     listaExtrato[indice].valor = valor; 
     //Renderiza a lista
     renderizarLista();
-}
+}*/
 
 
 
@@ -140,6 +143,10 @@ function somaCamposValor() {
     }
     saldo.value += soma
 }
+
+renderizarLista();
+}
+fetchLista()
 
 
 

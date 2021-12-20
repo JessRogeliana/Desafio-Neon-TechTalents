@@ -4,8 +4,23 @@ const descricao = document.getElementById("description");
 const valor = document.getElementById("amount");
 const data = document.getElementById("date"); 
 
-formulario.addEventListener('btn-submit', validaFormulario);
+formulario.addEventListener('submit', validaFormulario);
 
+async function criarLancamento(url, data) {
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data) 
+  });
+  return response.json();
+}
 
 function validaDescricao() {
 	 "use strict";
@@ -37,13 +52,25 @@ if (isNaN(data) === true){
 }
 }
 
-function validaFormulario(event) {
+function eEntrada (statusDeEntrada) {
+  return statusDeEntrada.toLowerCase() === 'entrada'
+}
+
+async function validaFormulario(event) {
 "use strict";
 event.preventDefault();
 	
   if (validaDescricao() && validaData() && validaValor()) {
-      formulario.reset();
-      document.getElementById('link-meusLancamentos').click();
+    
+    const userInfo = JSON.parse(window.localStorage.getItem('userInfo'))
+  
+    const formData = new FormData(formulario)
+      const data = criarLancamento('http://localhost:5000/lancamento/',{ "valor":eEntrada(formData.get('status')) ? Number(formData.get('amount')) :Number(formData.get('amount'))*-1 ,
+      "data": formData.get('date').split('-').reverse().join('/'),
+      "descripcao": formData.get('description'),
+      "tipo": formData.get('status'),
+      "id_cliente": userInfo.user.id } )
+      if (data) window.location.assign('http://127.0.0.1:5500/Desafio-Neon-TechTalents/Frontend/meus%20lancamentos%20-%20Extrato/meusLancamentos.html')
   } 
 }
 /* Toast */
@@ -56,7 +83,6 @@ function showToast (mensagem) {
 }
 
 /*Chamadas*/
-document.getElementById("btn-submit").addEventListener('click', validaFormulario);
 document.getElementById("description").addEventListener('focusout', validaDescricao);
 document.getElementById("amount").addEventListener('focusout', validaValor);
 document.getElementById("date").addEventListener('focusout', validaData);

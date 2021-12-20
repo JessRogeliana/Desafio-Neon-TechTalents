@@ -1,7 +1,7 @@
 const toastLive = document.getElementById('toast-error');
 const formulario = document.getElementById('register-form')
 
-formulario.addEventListener('btn-submit', validaFormulario)
+formulario.addEventListener('submit', validaFormulario)
 
 function showToast (mensagem) {
   let toast = new bootstrap.Toast(toastLive);
@@ -10,11 +10,37 @@ function showToast (mensagem) {
   toast.show();
 }
 
-function validaFormulario(event) {
+async function criarUsuario(url, data) {
+  
+    const response = await fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data) 
+    });
+    return response.json();
+  }
+
+async function validaFormulario(event) {
   event.preventDefault()   
     if ( validaUsuario() && validaEmail() && validaSenha() && validaConfSenha()) {
-        formulario.reset();
-        document.getElementById('link').click();
+        const nome = document.getElementById("name")
+        const password = document.getElementById("password")
+        const email = document.getElementById("email")
+        const data = await criarUsuario('http://localhost:5000/cadastro', {
+          nome: nome.value, 
+          password: password.value,
+          email: email.value
+        })
+
+        if(data) window.location.assign('http://127.0.0.1:5500/Desafio-Neon-TechTalents/Frontend/index.html')
+       
     } 
 }
 

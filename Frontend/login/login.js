@@ -1,11 +1,11 @@
-/*MENSAGEM E VALIDAÇÃO CAMPOS*/ 
+ /*MENSAGEM E VALIDAÇÃO CAMPOS*/ 
 
 const toastLiveUsuario = document.getElementById('toast-error-usuario');
 const toastLiveSenha = document.getElementById('toast-error-senha');
 const formulario = document.getElementById('register-form')
 
 
-formulario.addEventListener('btn-submit', validaFormulario)
+formulario.addEventListener('submit', validaFormulario)
 
 function showToastUsuario (mensagem) {
   let toast = new bootstrap.Toast(toastLiveUsuario);
@@ -21,12 +21,34 @@ function showToastSenha (mensagem) {
   toast.show();
 }
 
-function validaFormulario(event) {
+async function login(url, data) { 
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data) 
+  });
+  return response.json();
+}
+
+
+async function validaFormulario(event) {
 
   event.preventDefault()   
-    if ( validaUsuario() && validaSenha()) {
-        formulario.reset();
-        document.getElementById('link-saldo').click();
+    if (validaUsuario() && validaSenha()) {
+      const formData = new FormData(formulario)
+      const data = await login('http://localhost:5000/login', {email:formData.get('name'), password:formData.get('password')})
+      if(data){
+        const jsonData = JSON.stringify(data)
+        window.localStorage.setItem('userInfo', jsonData)
+        window.location.assign('http://127.0.0.1:5500/Desafio-Neon-TechTalents/Frontend/saldo/saldo_index.html')
+      }
     } 
 }
 
@@ -58,6 +80,5 @@ function validaSenha() {
 }
 
 /*Chamadas*/
-document.getElementById('btn-submit').addEventListener('click', validaFormulario);
 document.getElementById('name').addEventListener('focusout', validaUsuario);
 document.getElementById('password').addEventListener('focusout', validaSenha);
