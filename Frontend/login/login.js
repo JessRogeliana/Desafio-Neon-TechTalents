@@ -44,11 +44,12 @@ async function validaFormulario(event) {
     if (validaUsuario() && validaSenha()) {
       const formData = new FormData(formulario)
       const data = await login('http://localhost:5000/login', {email:formData.get('name'), password:formData.get('password')})
-      if(data){
+      if(data.user){
+        console.log(data)
         const jsonData = JSON.stringify(data)
         window.localStorage.setItem('userInfo', jsonData)
         window.location.assign('http://127.0.0.1:5500/Desafio-Neon-TechTalents/Frontend/saldo/saldo_index.html')
-      }
+      } else showToastSenha(data.msg)
     } 
 }
 
