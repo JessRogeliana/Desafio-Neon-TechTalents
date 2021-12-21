@@ -200,6 +200,23 @@ span {
     margin: auto;
 }
 
+
+/* TOASTS */
+
+.toast-usuario {
+    position: absolute; 
+    top: 60%; 
+    right: 39%;
+    width: auto;
+}
+
+.toast-senha {
+    position: absolute; 
+    top: 68%; 
+    right: 35%;
+    width: auto;
+}
+
 /*FOOTER*/
 
 footer {
@@ -340,6 +357,14 @@ footer a {
         width: 46%;
         margin-top:41%;
     }
+    .toast-usuario {
+        top: 57%; 
+        right: 41%;
+    }
+    .toast-senha {
+        top: 65%; 
+        right: 37%;
+    }
 }
 
 @media (max-width: 1107px) {
@@ -377,6 +402,14 @@ footer a {
     .neon-mensagem {
         width: 50%;
         margin-top:47%;
+    }
+    .toast-usuario {
+        top: 53%; 
+        right: 38%;
+    }
+    .toast-senha {
+        top: 63%; 
+        right: 34%;
     }
 }
 
@@ -504,5 +537,23 @@ footer a {
     footer div a img {
         width: 40px;
         height: 40px;
+    }
+    .toast-usuario {
+        top: 40%; 
+        right: 30%;
+    }
+    .toast-senha {
+        top: 46%; 
+        right: 20%;
+    }
+}
+@media (max-width: 375px) {
+    .toast-usuario {
+        top: 38%; 
+        right: 25%;
+    }
+    .toast-senha {
+        top: 45%; 
+        right: 15%;
     }
 }

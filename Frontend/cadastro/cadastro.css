@@ -31,7 +31,7 @@ header h1 {
 }
 
 .logo-header {
-  width: 13%;
+  width: 10%;
 }
 
 .logo-header img {
@@ -86,7 +86,7 @@ main {
   background-color: #0072CC;
   box-sizing: border-box;
   padding: 1.8rem  1.7rem;
-  margin-top: 5%;
+  margin-top: 8%;
 }
 
 .usuario-img{
@@ -131,6 +131,7 @@ margin-right: 2.5%;
 
 .neon-mensagem {
   margin-top: 4%;
+  text-align: center;
 }
 
 #name , #password, #email, #confirPassword {
@@ -162,6 +163,7 @@ a{
   margin: 10px;
   font-size: 20px;
   border-radius: 40px;
+  margin-left: 3rem;
 }
 
 #btn-submit:hover {
@@ -217,6 +219,38 @@ footer a {
   color: #dbad05;
 }
 
+
+/* Toasts */
+
+.toast-usuario {
+  position: absolute; 
+  top: 76%; 
+  right: 55%;
+  width: auto;
+}
+
+.toast-email {
+  position: absolute; 
+  top: 76%; 
+  right: 34%;
+  width: auto;
+}
+
+.toast-senha {
+  position: absolute; 
+  top: 82%; 
+  right: 53%;
+}
+
+.toastConf {
+  position: absolute; 
+  top: 84%; 
+  right: 33%;
+  width: auto; 
+}
+
+
+
 /*Medias Querys Responsividade*/
 
 @media (max-width: 1440px) {
@@ -224,206 +258,252 @@ footer a {
   html {
     font-size: 70%;
 }
-
   header h1{
-    font-size: 1.3rem;
+    font-size: 3rem;
   }
-
-  .logo-header img {
-    display: none;
-  }
-
   button {
-    width: 15%;
-    margin-inline: auto;
-}
-
-.login-container{
-  width: 90%;
-  font-size: x-small;
-}
-
-h2{
-  font-size: 1rem;
-}
-
-#btn-submit{
-  width: 85%;
-  font-size: 1rem;
-}
-
-.neon-mensagem{
-    width: 80%;
+    width: 10%;
   }
-
-  .imagenes-rodape{
-    width: 12%;
-    height: 12%;
+  .login-container {
+    width: 65%;
   }
-
-  .copy{
-    font-size: .8rem;
+  .toast-usuario {
+    top: 73%; 
+    right: 57%;
+  }
+  .toast-email {
+    top: 73%; 
+    right: 25%;
+  }
+  .toast-senha {
+    top: 83%; 
+    right: 53%;
+  }
+  .toastConf {
+    top: 84%; 
+    right: 24%;
   }
 }
 
 @media (max-width: 1024px) {
-
   html {
-      font-size: 100%;
+      font-size: 65%;
   }
-
   header h1{
     font-size: 3rem;
   }
-
   button {
       width: 23%;
   }
-
   .logo-h1{
     width: 20%;
   }
-
   .logo-header {
       width: 0%;
   }
-
   .login-container {
-      width: 90%;
-      font-size: xx-large;
+      width: 75%;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  #btn-submit{
+    width: 85%;
+    font-size: 2rem;
   }
   .neon-mensagem {
-      width: 35%;
+    width: 60%;
   }
-
-h2{
-  font-size: 2rem;
-}
-
-#btn-submit{
-  width: 85%;
-  font-size: 1rem;
-}
-
-.neon-mensagem{
-    width: 80%;
-  }
-
   .imagenes-rodape{
     width: 15%;
     height: 15%;
   }
-
   .copy{
     font-size: 1rem;
+  }
+  .toast-usuario {
+    top: 63%; 
+    right: 57%;
+  }
+  .toast-email {
+    top: 63%; 
+    right: 20%;
+  }
+  .toast-senha {
+    top: 75%; 
+    right: 51%;
+  }
+  .toastConf {
+    top: 76%; 
+    right: 19%;
   }
 }
 
 @media (max-width: 768px) {
-
   html {
       font-size: 60%;
   }
-
   button {
       width: 30%;
   }
-
   .logo-header {
-      width: 22%;
+      display: hidden;
   }
-
   .login-container {
       width: 80%;
-      font-size: x-large;
   }
-
   .neon-mensagem {
-      width: 70%;
+      width: 65%;
   }
-
   .copy{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
-
+  .imagenes-rodape{
+    width: 14%;
+    height: 14%;
+  }
+  .toast-usuario {
+    top: 53%; 
+    right: 57%;
+  }
+  .toast-email {
+    top: 53%; 
+    right: 18%;
+  }
+  .toast-senha {
+    top: 62%; 
+    right: 50%;
+  }
+  .toastConf {
+    top: 63%; 
+    right: 15%;
+  }
 }
 
 @media (max-width: 592px) {
-
   html {
       font-size: 50%;
   }
-
   button {
       width: 30%;
   }
-
   .logo-header {
       visibility: hidden; 
   }
-
   .login-container {
-      width: 85%;
+      width: 90%;
   }
-
   .neon-mensagem {
-      width: 75%;
+      width: 70%;
+  }
+  .imagenes-rodape{
+    width: 14%;
+    height: 14%;
+  }
+  .toast-usuario {
+    top: 46%; 
+    right: 57%;
+  }
+  .toast-email {
+    top: 46%; 
+    right: 16%;
+  }
+  .toast-senha {
+    top: 55%; 
+    right: 50%;
+    width: 40%;
+  }
+  .toastConf {
+    top: 57%; 
+    right: 14%;
   }
 }
 
 @media (max-width: 425px) {
   .login-container {
-      width: 95%;
+      width: 100%;
       font-size: medium;
   }
-
   .button {
       margin-left: 1rem;
   }
-
   .logo-h1 {
       width: 0%;
   }
-
   header h1 {
-      padding: 1rem;
+      padding: 1.5rem;
   }
-
+  .logo-header img {
+    display: none;
+  }
   .neon-mensagem {
-      width: 80%;
+    width: 80%;
   }
-
   main {
-      padding: 4.5rem;
-      padding-top: 6rem;
+    padding: 6rem 0 6rem;
+  }
+  .imagenes-rodape{
+    width: 13%;
+    height: 13%;
+  }
+  .toast-usuario {
+    top: 41%; 
+    right: 55%;
+  }
+  .toast-email {
+    top: 41%; 
+    right: 4%;
+  }
+  .toast-senha {
+    top: 49%; 
+    right: 55%;
+    width: 40%;
+  }
+  .toastConf {
+    top: 52%; 
+    right: 3%;
   }
 }
 
 @media (max-width: 375px) {
-
   html {
     font-size: 45%;
-}
-
-  .login-container {
-      width: 100%;
-      font-size: small;
   }
-
+  .login-container {
+    width: 100%;
+    font-size: small;
+  }
   .button {
       margin-left: 1rem;
   }
-
   .logo-h1 {
       width: 0%;
   }
-
   header h1 {
       padding: 1.5rem;
   }
-
   .neon-mensagem {
-      width: 90%;
+      width: 85%;
   }
-
+  .imagenes-rodape{
+    width: 13%;
+    height: 13%;
+  }
+  .toast-usuario {
+    top: 37%; 
+    right: 55%;
+  }
+  .toast-email {
+    top: 37%; 
+    right: 4%;
+  }
+  .toast-senha {
+    top: 48%; 
+    right: 55%;
+    width: 40%;
+  }
+  .toastConf {
+    top: 49%; 
+    right: 3%;
+  }
 }

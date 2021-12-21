@@ -306,7 +306,7 @@ footer a {
 
 @media (max-width: 425px) {
   .container {
-      width: 95%;
+      width: 100%;
   }
   .button {
       margin-left: 1rem;
@@ -321,9 +321,12 @@ footer a {
       width: 80%;
   }
   main {
-      padding: 4.5rem;
-      padding-top: 6rem;
+      padding: 6rem 0 6rem 0;
   }
+  footer div a img {
+    width: 30px;
+    height: 30px;
+}
 }
 
 @media (max-width: 375px) {
